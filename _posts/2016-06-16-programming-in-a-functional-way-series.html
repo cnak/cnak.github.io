@@ -54,19 +54,19 @@ Usually it's a positive, however coming into the FP with with my OOP background
 <h3>Side effects</h3>
 {% highlight ruby %}
 def square(int x)<br />
-  x * x<br />
+  x * x
 end<br />
 {% endhighlight %}
 <p>A small example of a function with no side effects. If x is 5, then 25 will return, every single time. It's result only depends on it's input arguments and nothing else. In addition it doesn't modify anything outside of it's scope.</p>
-<p>[code lang=ruby]<br />
+{% highlight ruby %}
 def processEmailMessage<br />
-latest_message = Server.latest_message<br />
-return process(latest_message)<br />
-end<br />
-[/code]</p>
+latest_message = Server.latest_message
+return process(latest_message)
+end
+{% endhighlight %}
 <p>The method signature indicates there's no input, which is a bit deceiving. It does have an input. A hidden input, the latest message. Calling this method more than once will cause side effects. It has an effect on object(s) or variable(s) outside it's origin intended purpose.<br />
 Another aspect of this function is that if we knew the inputs of this method like below then if we were to send the same latest_message object as an input parameter, then we should get the same processed message as an output.</p>
-<p>[code lang=ruby]<br />
+{% highlight ruby %}
 def processEmailMessage(latest_message)<br />
 return process(latest_message)<br />
 end<br />
@@ -85,7 +85,7 @@ end</p>
 <p>But what about high order functions?</p>
 <h3>High order functions</h3>
 <p>Simply put, when you pass functions into a function's parameter. Let's look at some examples.</p>
-<p>[code lang=ruby]<br />
+{% highlight ruby %}
 def name<br />
 &quot;Ced&quot;<br />
 end</p>

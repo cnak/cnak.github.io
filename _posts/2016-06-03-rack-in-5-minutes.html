@@ -14,12 +14,6 @@ meta:
   _rest_api_published: '1'
   _rest_api_client_id: "-1"
   _publicize_job_id: '23476471727'
-author:
-  login: cnak123
-  email: kisema@gmail.com
-  display_name: Cedric
-  first_name: ''
-  last_name: ''
 ---
 <h2>What is Rack</h2>
 <ul>
@@ -39,17 +33,16 @@ This gives you more time to spend on writing what the application does and provi
 <li>body: Body of the response.<br />
 A simple HelloWorld app in Rack</li>
 </ul>
-<p>[code language="ruby"]<br />
-#config.ru<br />
-class HelloWorld<br />
- def self.call(env)<br />
- [ 200,<br />
- {&quot;Content-Type&quot; =&gt; &quot;text/plain&quot;},<br />
- [&quot;Hello World! &quot;]<br />
- ]<br />
- end<br />
-end<br />
-[/code]</p>
+{% highlight ruby %}
+#config.ru
+class HelloWorld
+ def self.call(env)
+    [ 200,
+    {"Content-Type" ; => "text/plain"},
+    ["Hello World!"]
+ end
+end
+{% endhighlight %}
 <p>Entering 'rackup' in the terminal will start our rack up</p>
 <p>Accessing the up and running website by going to "localhost:9292"</p>
 <p>And That's it!</p>

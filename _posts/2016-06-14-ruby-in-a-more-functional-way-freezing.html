@@ -13,22 +13,16 @@ meta:
   _rest_api_published: '1'
   _rest_api_client_id: "-1"
   _publicize_job_id: '23832965276'
-author:
-  login: cnak123
-  email: kisema@gmail.com
-  display_name: Cedric
-  first_name: ''
-  last_name: ''
 ---
 <p>One of the tenets of functional programming is immutability.</p>
 <h3>Freezing variables</h3>
 <p>Immutable values means that once a variable has been set, it can never change. It's forever the same, immutable.</p>
 <p>But wait a second, if a variable is frozen....doesn't it mean that it no longer varies? which means it's not longer a variable? exactly, it becomes a constant!</p>
-<p>[code lang="ruby"]<br />
-life_constant = &amp;quot;change&amp;quot;<br />
-life_constant.freeze<br />
-life_constant = &amp;quot;taxes&amp;quot;<br />
-[/code]</p>
+{% highlight ruby %}
+life_constant = "change"
+life_constant.freeze
+life_constant = "taxes"
+{% endhighlight %}
 <p>If you try the above means you get a runtime error, as you can't modify a frozen string.</p>
 <h3>Freezing objects</h3>
 <p>Sidenote, no point freezing Fixnums as they are already immutable objects.</p>
