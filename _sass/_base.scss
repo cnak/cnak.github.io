@@ -1,31 +1,167 @@
-/**
- * Reset some basic elements
- */
-body, h1, h2, h3, h4, h5, h6,
-p, blockquote, pre, hr,
-dl, dd, ol, ul, figure {
-    margin: 0;
-    padding: 0;
-}
-
-
-
-/**
- * Basic styling
+/*
+ * Clean css theme for Markdown files by c_nak [https://github.com/cnak]
  */
 body {
-    font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
-    color: $text-color;
-    background-color: $background-color;
-    -webkit-text-size-adjust: 100%;
-    -webkit-font-feature-settings: "kern" 1;
-    -moz-font-feature-settings: "kern" 1;
-    -o-font-feature-settings: "kern" 1;
-    font-feature-settings: "kern" 1;
-    font-kerning: normal;
+    color: #333333;
+    line-height: 1.7em;
+    font-family: "Helvetica Neue", "Open Sans", sans-serif;
+    font-weight: 200;
+    background-color: white;
 }
-
-
+p {
+    line-height: 1.7em;
+}
+table {
+    font-size: inherit;
+    font: 100%;
+    margin: 1em;
+}
+table th {
+    border-bottom: 1px solid #bbb;
+    padding: .2em 1em;
+}
+table td {
+    border-bottom: 1px solid #ddd;
+    padding: .2em 1em;
+}
+input[type=text],
+input[type=password],
+input[type=image],
+textarea {
+    font: 99% helvetica, arial, freesans, sans-serif;
+}
+select,
+option {
+    padding: 0 .25em;
+}
+optgroup {
+    margin-top: .5em;
+}
+pre,
+code {
+    font: 12px Monaco, "Courier New", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", monospace;
+}
+pre {
+    margin: 1em 0;
+    font-size: 12px;
+    background-color: #eee;
+    border: 1px solid #ddd;
+    padding: 5px;
+    line-height: 1.5em;
+    color: #444;
+    overflow: auto;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.07) 0 1px 2px inset;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+pre code {
+    padding: 0;
+    font-size: 12px;
+    background-color: #eee;
+    border: none;
+}
+code {
+    font-size: 12px;
+    background-color: #f8f8ff;
+    color: #444;
+    padding: 0 .2em;
+    border: 1px solid #dedede;
+}
+img {
+    border: 0;
+    max-width: 100%;
+}
+abbr {
+    border-bottom: none;
+}
+a {
+    color: #4183c4;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+a code,
+a:link code,
+a:visited code {
+    color: #4183c4;
+}
+h2,
+h3 {
+    margin: 1em 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    border: 0;
+    color: black;
+}
+h1 {
+    border-top: 1px solid #aaa;
+    padding-top: .9em;
+    margin-top: 1.5em;
+    font: 4.0em "Helvetica Neue", "Open Sans", sans-serif;
+    color: #353535;
+    font-weight: 100;
+}
+h1:first-child {
+    margin-top: 0;
+    padding-top: .25em;
+    border-top: none;
+}
+h1:first-letter {
+    color: red;
+}
+h2 {
+    font-size: 150%;
+    margin-top: 1.5em;
+    padding-top: .5em;
+    font: 200 2.0em "Helvetica Neue", "Open Sans", sans-serif;
+}
+h3 {
+    margin-top: 1em;
+    color: #AAAAAA;
+    font: 200 1.2em "Helvetica Neue", "Open Sans", sans-serif;
+}
+hr {
+    border: 1px solid #ddd;
+}
+ul {
+    margin: 1em 0 1em 2em;
+}
+ol {
+    margin: 1em 0 1em 2em;
+}
+ul li,
+ol li {
+    margin-top: .7em;
+    margin-bottom: .7em;
+}
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+blockquote {
+    margin: 1em 0;
+    border-left: 5px solid #ddd;
+    padding-left: .6em;
+    color: #555;
+}
+dt {
+    font-weight: bold;
+    margin-left: 1em;
+}
+dd {
+    margin-left: 2em;
+    margin-bottom: 1em;
+}
 
 /**
  * Set `margin-bottom` to maintain vertical rhythm
@@ -36,120 +172,6 @@ ul, ol, dl, figure,
 %vertical-rhythm {
     margin-bottom: $spacing-unit / 2;
 }
-
-
-
-/**
- * Images
- */
-img {
-    max-width: 100%;
-    vertical-align: middle;
-}
-
-
-
-/**
- * Figures
- */
-figure > img {
-    display: block;
-}
-
-figcaption {
-    font-size: $small-font-size;
-}
-
-
-
-/**
- * Lists
- */
-ul, ol {
-    margin-left: $spacing-unit;
-}
-
-li {
-    > ul,
-    > ol {
-         margin-bottom: 0;
-    }
-}
-
-
-
-/**
- * Headings
- */
-h1, h2, h3, h4, h5, h6 {
-    font-weight: $base-font-weight;
-}
-
-
-
-/**
- * Links
- */
-a {
-    color: $brand-color;
-    text-decoration: none;
-
-    &:visited {
-        color: darken($brand-color, 15%);
-    }
-
-    &:hover {
-        color: $text-color;
-        text-decoration: underline;
-    }
-}
-
-
-
-/**
- * Blockquotes
- */
-blockquote {
-    color: $grey-color;
-    border-left: 4px solid $grey-color-light;
-    padding-left: $spacing-unit / 2;
-    font-size: 18px;
-    letter-spacing: -1px;
-    font-style: italic;
-
-    > :last-child {
-        margin-bottom: 0;
-    }
-}
-
-
-
-/**
- * Code formatting
- */
-pre,
-code {
-    font-size: 15px;
-    border: 1px solid $grey-color-light;
-    border-radius: 3px;
-    background-color: #eef;
-}
-
-code {
-    padding: 1px 5px;
-}
-
-pre {
-    padding: 8px 12px;
-    overflow-x: auto;
-
-    > code {
-        border: 0;
-        padding-right: 0;
-        padding-left: 0;
-    }
-}
-
 
 
 /**
