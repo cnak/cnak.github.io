@@ -93,7 +93,6 @@ h1 {
     font-weight: 100;
 }
 h1:first-child {
-    margin-top: 0;
     padding-top: .25em;
     border-top: none;
 }
@@ -234,4 +233,8 @@ pre {
             fill: $grey-color;
         }
     }
+}
+
+.post-content {
+  margin-bottom: 25%;
 }
