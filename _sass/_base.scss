@@ -37,10 +37,7 @@ option {
 optgroup {
     margin-top: .5em;
 }
-pre,
-code {
-    font: 12px Monaco, "Courier New", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", monospace;
-}
+
 pre {
     margin: 1em 0;
     font-size: 12px;
@@ -55,19 +52,7 @@ pre {
     -moz-border-radius: 3px;
     border-radius: 3px;
 }
-pre code {
-    padding: 0;
-    font-size: 12px;
-    background-color: #eee;
-    border: none;
-}
-code {
-    font-size: 12px;
-    background-color: #f8f8ff;
-    color: #444;
-    padding: 0 .2em;
-    border: 1px solid #dedede;
-}
+
 img {
     border: 0;
     max-width: 100%;
@@ -82,7 +67,6 @@ a {
 a:hover {
     text-decoration: underline;
 }
-a code,
 a:link code,
 a:visited code {
     color: #4183c4;
@@ -174,6 +158,31 @@ ul, ol, dl, figure,
 }
 
 
+/**
+ * Code formatting
+ */
+pre,
+code {
+    font-size: 15px;
+    border: 1px solid $grey-color-light;
+    border-radius: 3px;
+    background-color: #eef;
+}
+
+code {
+    padding: 1px 5px;
+}
+
+pre {
+    padding: 8px 12px;
+    overflow-x: auto;
+
+    > code {
+        border: 0;
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
 /**
  * Wrapper
  */
