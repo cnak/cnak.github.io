@@ -1,0 +1,45 @@
+---
+layout: post
+title: '4 Simple Rules of simple design pt 2: Test names'
+date: 2016-04-08 09:00:02.000000000 +01:00
+type: post
+published: true
+status: publish
+categories:
+- Design
+tags:
+- 8L
+meta:
+  _wpcom_is_markdown: '1'
+  _rest_api_published: '1'
+  _rest_api_client_id: "-1"
+  _publicize_job_id: '21576268765'
+author:
+  login: cnak123
+  email: kisema@gmail.com
+  display_name: Cedric
+  first_name: ''
+  last_name: ''
+---
+<h2>Test Names should influence an Object's API</h2>
+<p>As I've written before, tests are important. We should keep our tests as clean as our production code. With this in mind it should follow the simple rules.</p>
+<p>I will be using the Conway's Game of Life as an example, written in C#</p>
+<p>[code lang=java]<br />
+[Test]<br />
+public void NewWorldIsEmpty(){<br />
+var world = new World();<br />
+Assert.AreEqual(0, world.living_cells.count);<br />
+}<br />
+[/code]</p>
+<p>This first test name indicates that it's concern with an empty world but the assert statement itself doesn't. It doesn't even have the word empty in it.<br />
+A unit test is the first consumer and the first interaction with the future concrete class (if you're doing TDD). It represents how the component(s) are going to be used.<br />
+We wouldn't want a user to have to look at the internal implementation of the world object just to found out if it's empty.</p>
+<p>A cleaner test would look like this.</p>
+<p>[code lang=java]<br />
+[Test]<br />
+public void NewWorldIsEmpty(){<br />
+var world = new World();<br />
+Assert.IsTrue(world.IsEmpty);<br />
+}<br />
+[/code]</p>
+<p>This updated method reads a lot better, there's a symmetric between the name of the method and what the assert is doing, in addition it hides the internal of the object and making it a more readable API.</p>

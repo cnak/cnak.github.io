@@ -1,0 +1,34 @@
+---
+layout: post
+title: Diary:Today something clicked, not sure what though
+date: 2016-03-09 20:51:03.000000000 +00:00
+type: post
+published: true
+status: publish
+categories:
+- Diary
+tags:
+- 8L
+meta:
+  _wpcom_is_markdown: '1'
+  _rest_api_published: '1'
+  _rest_api_client_id: "-1"
+  _publicize_job_id: '20597811498'
+author:
+  login: cnak123
+  email: kisema@gmail.com
+  display_name: Cedric
+  first_name: ''
+  last_name: ''
+---
+<p>While I was introducing different game types in my tic tac toe game, using constructors like so..</p>
+<p>[code lang=text]<br />
+public Game(Board board, IGameConsole, console, HumanPlayer humanPlayer, ComputerPlayer computerPlayer)</p>
+<p>public Game(Board board, IGameConsole, console, ComputerPlayer computerPlayer, ComputerPlayer computerPlayer)</p>
+<p>public Game(Board board, IGameConsole, console, HumanPlayer humanPlayer, ComputerPlayer computerPlayer)<br />
+[/code]</p>
+<p>I realised that this is how I'm supposed to do it, first introduce the duplication then refactor. I tell myself this all the time but sometimes I get frustrated and I instead want to take a shortcut which invariably leads me to a complex path.<br />
+It seems so obvious now and I now this but time again and again it comes back to me displining myself. This is why we do katas, it teaches us this! I guess there's nothing quite like repetition to make best practices stick.</p>
+<p>So next step will be to generalize this duplication, whether it is to create a new class or a method, I'll decide once I'm at that crossroad, but for now, I'll leave the duplication there as I slowly refactor other parts of the code to make it cleaner.</p>
+<p>I have a strong feeling I'll be learning and relearning this kind thing again and again through my apprenticeship, it feels like 2 steps forward, 1 step back sometimes.</p>
+<p>But hey, it least it's a step forward.</p>

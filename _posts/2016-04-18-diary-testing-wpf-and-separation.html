@@ -1,0 +1,37 @@
+---
+layout: post
+title: 'Diary: Testing, C# WPF and Separation.'
+date: 2016-04-18 20:34:01.000000000 +01:00
+type: post
+published: true
+status: publish
+categories:
+- Design
+- TDD
+tags:
+- 8L
+meta:
+  _wpcom_is_markdown: '1'
+  _publicize_job_id: '21918841924'
+  _rest_api_published: '1'
+  _rest_api_client_id: "-1"
+author:
+  login: cnak123
+  email: kisema@gmail.com
+  display_name: Cedric
+  first_name: ''
+  last_name: ''
+---
+<p>&nbsp;</p>
+<p>I've spent the recent iteration adding a GUI to my Contact management(ConMan) app. When I originally made the estimation there was a lot of doubt as I had never used WinForms or WPF, in fact I wasn't even aware of them as I had not done any development in a Windows Environment.<br />
+Because of this I should've estimated a lot higher for my pessimistic as there was too many unknowns. An alternative approach I took was to develop two spikes, first one without TDD and the second with. While I learned a lot during the spike, nothing could prepare me for the next part.</p>
+<h3>Integrating GUI with existing project</h3>
+<p>I found out that it's not so straightfoward to add a GUI to a project. In my case my ConMan.<br />
+My options were to import the conMan classes one by one, however this would be time consuming and error prone. Another option which I thought would be easy, would be to add WPF files to an existing project. Not straightforward either.</p>
+<p>This train of thought did lead me to realising that I needed to separate the concerns. By making each separation it's own project which outputed a windows Dll file, which could then be imported as a dependency elsewhere. This would allow me to then create a WPF project and then<br />
+import the dependencies I needed, such as the contact model. Ah..HA! this would make my code much more modular and easier to differient on who was responsible for what.</p>
+<h3>Connecting the separated modules</h3>
+<p>So how does one go about connecting these dependencies. I did some reading and ran into the Presentation Model by Martin Fowler. A archeticutral design that separates state and behaviour away from the GUI components. Sounded about where my design was leading. After some more research however I found a C# approach to this problem named the Model-view-viewmodel architectural pattern. A variation on Martin Fowler pattern, similarly to that pattern, it abstracts the view's state and behaviour.</p>
+<p>A good place to start was to do a small spike of this and see how it works in the real world. Sadly a lot of tutorials and guides were so heavily dependent on XAML, the file format that I was avoiding at all cost. I find XAML tightly couples code, difficult to read when it's more than a couple of lines and not easy to reuse. In addition this pattern seemed to require a lot of setup, which I found difficult to test drive.</p>
+<p>So I finally decided to take the principles from these ideas and implement something similar and a lot simplier.</p>
+<p>Which I will talk about in another post.</p>

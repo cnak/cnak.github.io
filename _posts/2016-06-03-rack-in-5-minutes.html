@@ -1,0 +1,56 @@
+---
+layout: post
+title: Rack in 5 minutes
+date: 2016-06-03 16:37:09.000000000 +01:00
+type: post
+published: true
+status: publish
+categories:
+- Ruby
+tags:
+- 8L
+meta:
+  _wpcom_is_markdown: '1'
+  _rest_api_published: '1'
+  _rest_api_client_id: "-1"
+  _publicize_job_id: '23476471727'
+author:
+  login: cnak123
+  email: kisema@gmail.com
+  display_name: Cedric
+  first_name: ''
+  last_name: ''
+---
+<h2>What is Rack</h2>
+<ul>
+<li>uses Ruby's built-in WEBrick web server</li>
+<li>provides a web server interface</li>
+<li>a protocol for building composing web apps</li>
+<li>collection of middleware utilities</li>
+</ul>
+<h2>Web server interface</h2>
+<p>Rack provides an interface so that you don't have to deal with some elements of the server. Such as listening on a port, accepting connections, parsing HTTP responses and requests.<br />
+This gives you more time to spend on writing what the application does and providing value.</p>
+<h2>Protocol</h2>
+<p>Rack protocol is simply a Ruby object with a call method, being a proc it has a "call" method. The method arguments are the environment variables which describe the incoming request. The return value is an array with [status, headers, body].</p>
+<ul>
+<li>status: The HTTP status code</li>
+<li>headers: hash of HTTP headers for the response</li>
+<li>body: Body of the response.<br />
+A simple HelloWorld app in Rack</li>
+</ul>
+<p>[code language="ruby"]<br />
+#config.ru<br />
+class HelloWorld<br />
+ def self.call(env)<br />
+ [ 200,<br />
+ {&quot;Content-Type&quot; =&gt; &quot;text/plain&quot;},<br />
+ [&quot;Hello World! &quot;]<br />
+ ]<br />
+ end<br />
+end<br />
+[/code]</p>
+<p>Entering 'rackup' in the terminal will start our rack up</p>
+<p>Accessing the up and running website by going to "localhost:9292"</p>
+<p>And That's it!</p>
+<p>Within moments we have an app running.</p>

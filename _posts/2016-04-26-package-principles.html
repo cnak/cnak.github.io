@@ -1,0 +1,84 @@
+---
+layout: post
+title: Package Principles with *CedConMan™*
+date: 2016-04-26 08:06:20.000000000 +01:00
+type: post
+published: true
+status: publish
+categories:
+- Design
+tags:
+- 8L
+meta:
+  _wpcom_is_markdown: '1'
+  _rest_api_published: '1'
+  _rest_api_client_id: "-1"
+  _publicize_job_id: '22176756041'
+author:
+  login: cnak123
+  email: kisema@gmail.com
+  display_name: Cedric
+  first_name: ''
+  last_name: ''
+---
+<p>Imagine you've created a wonderful contact management system that has all the bells and whistles, meets the clients needs. It creates, edit, deletes and read contacts. This system has various different classes that don't strictly relate to one and another but are all required to make the system operate.<br />
+In addition to this you would like to to have your group of developers working on different parts of the codebase without stepping on each other's toe.</p>
+<p>A developer interested in changing how persistence works shouldn't be concerned with the GUI and vice-versa.</p>
+<p>The next step to get isolation of the components is to create smaller packages so then the developer can happily modify the system and complete new releases without ever having to interfere with other parts of the system.</p>
+<p>This solves only part of the problem.</p>
+<p>The SOLID principles are related to class design, the package principles are related to the packages within our app. In .NET, these are our outputted dll files that other clients can import into their own project as a dependency.</p>
+<h2>The 6 package principles are:</h2>
+<h3>Related to cohesion</h3>
+<ul>
+<li>Release Reusue Equivalency</li>
+</ul>
+<p>REP essentially means that the package must be created with reusable classes</p>
+<ul>
+<li>Common Reuse</li>
+</ul>
+<p>The CRP states that classes that tend to be reused together belong in the same package together<br />
+- Common Closure</p>
+<p>CCP states that the package should not have more than one reason to change.<br />
+Change only one package at a time</p>
+<h3>Related to coupling</h3>
+<ul>
+<li>Acyclic dependencies principle (ADP)</li>
+</ul>
+<p>In a development cycle with multiple developers, cooperation and integration needs to happen in small incremental releases. The ADP states that there can be no cycles in the dependency structure, and that when an incremental release is made, the other developers can adopt and build upon it.</p>
+<ul>
+<li>Stable-dependencies principle (SDP)</li>
+</ul>
+<p>Designs, by nature of the environments they are used in or by, are changing.</p>
+<ul>
+<li>Stable-abstractions principle (SAP)</li>
+</ul>
+<p>I The SAP says that a stable package should also be abstract so that its stability does not prevent it from being extended. It also states that an instable package should be concrete since its instability allows the concrete code within it to be easily change<br />
+Here is the Package structure for my Contact Management</p>
+<ul>
+<li>ContactModel<br />
+The class representation of the contact object and validation class</li>
+<li>ContactViewModel<br />
+Classes that the UI uses to connect to the model and storage</li>
+<li>
+<p>Storage<br />
+CRUD related actions</p>
+</li>
+<li>
+<p>WPFGui<br />
+Classes related to running the WPF UI version</p>
+</li>
+<li>
+<p>ConsoleApp<br />
+Classes Related to running the Console UI version</p>
+</li>
+</ul>
+<h2>Release Reuse Equivalency</h2>
+<p>The Release reuse equivalence principle states that all classes inside a package should be treated that as though a 3rd party is going to be using it, thus should have some form of version tracking system.</p>
+<p>For my classes I used the assembly information to change the version number, so each new release brought a newer version number.</p>
+<h2>Common Closure(CCP) &amp; Common-reuses principle(CRP)</h2>
+<p>Classes that change together are packaged together.</p>
+<p>In the event that the Contact class changes, it made sense to also change the contact builder(uses builder pattern to build a contact). If a new field is introduced, say contact blood type, then the builder needs to introduce a method that builds that field into a contact. Likewise the ContactValidator class needs to be update to validate blood type inputs.</p>
+<p>These changes all stay within the same ContactModel package, we are not required to leave the package and venture elsewhere. This has good cohesion and CCP.</p>
+<h2>Stable dependencies principle(SDP)</h2>
+<p>SDP is about violatile packages should ideally be dependent only on stable package(s).</p>
+<p>A good example of this is the WPFGui package. The gui design of an app can change a lot, especially during development. Making crucial that we don't make our lives more difficult by the floor constantly moving beneath us. The WPFGui is dependent on the Storage package which itself rarely changes.</p>

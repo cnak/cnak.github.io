@@ -1,0 +1,28 @@
+---
+layout: post
+title: Top-down and down-up design (part 2)
+date: 2016-02-13 21:53:45.000000000 +00:00
+type: post
+published: true
+status: publish
+categories: []
+tags:
+- 8L
+meta:
+  _wpcom_is_markdown: '1'
+  _rest_api_published: '1'
+  _rest_api_client_id: "-1"
+  _publicize_job_id: '19775753115'
+author:
+  login: cnak123
+  email: kisema@gmail.com
+  display_name: Cedric
+  first_name: ''
+  last_name: ''
+---
+<p>Yesterday I wrote about top down approach to design, bottom up is the reverse approach</p>
+<p>With this approach we first predict what components on going to be required. Going back to the EchoServer example, the echoServer class depends on a echoConsole module, this means by first designing the echoConsole, we're taking a bottom up approach.</p>
+<p>In this example it doesn't seem to make much of a difference however when designing a larger system, the difference becomes more apparent.</p>
+<p>In addition with larger system you don't get the immediate feedback on whether the domain objects that you've implemented will even be needed. This leads to wastage, requiring deletion of tests and classes(worse is if the developer forgets these classes, yikes!)</p>
+<p>&nbsp;</p>
+<p>Ced</p>

@@ -1,0 +1,46 @@
+---
+layout: post
+title: 'Diary: Data should flow through your system.'
+date: 2016-05-05 20:40:26.000000000 +01:00
+type: post
+published: true
+status: publish
+categories:
+- Clojure
+- Diary
+tags:
+- 8L
+meta:
+  _wpcom_is_markdown: '1'
+  _rest_api_published: '1'
+  _rest_api_client_id: "-1"
+  _publicize_job_id: '22516697230'
+author:
+  login: cnak123
+  email: kisema@gmail.com
+  display_name: Cedric
+  first_name: ''
+  last_name: ''
+---
+<p>Worked on my game loop today which I find challenging but incredibly rewarding once I had completed it.<br />
+I wanted to have an idea of where I wanted to get to, so I decided to spike my solution, which raised a couple of questions.<br />
+How do I effectiely recursed so a user can take multiple turns?, how do I switch the current player on each turn? how do pass a new state of the board if there's only immutable state to handle?</p>
+<p>I spent an hour pairing with Jim, he showed me the best way to approach testing my game loop, while I didn't understand everything 100%, it was enough to get me moving forward.</p>
+<p>I learnt that it's okay to keep state of the next board as long as it doesn't leave the scope of the function. Using let allows you to bind the result of a function, which you can then use later.<br />
+It really is about data flow. Letting the input into a function, which then outputs a result, which in turn could become an input in another function. Data flows through your systems, no dealing with side effects and side causes.</p>
+<p>Below is my solution to the game loop</p>
+<p>[code lang="clojure"]<br />
+(def a-empty-board [&amp;quot;-&amp;quot; &amp;quot;-&amp;quot; &amp;quot;-&amp;quot; &amp;quot;-&amp;quot; &amp;quot;-&amp;quot; &amp;quot;-&amp;quot; &amp;quot;-&amp;quot; &amp;quot;-&amp;quot; &amp;quot;-&amp;quot;])</p>
+<p>(defn play-turn [board]<br />
+(let [next-state-board (board/make-move board (console/get-move-choice)<br />
+(board/current-player board))]<br />
+(console/print-board next-state-board)<br />
+(if (board/game-over? next-state-board)<br />
+(console/print-board next-state-board)<br />
+(recur next-state-board))))</p>
+<p>(defn play-game []<br />
+(console/print-welcome-message)<br />
+(console/print-board a-empty-board)<br />
+(console/ask-for-move)<br />
+(play-turn a-empty-board))<br />
+[/code]</p>

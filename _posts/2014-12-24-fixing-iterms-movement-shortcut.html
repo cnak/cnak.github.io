@@ -1,0 +1,35 @@
+---
+layout: post
+title: Fixing iTerm's movement shortcut
+date: 2014-12-24 11:26:13.000000000 +00:00
+type: post
+published: true
+status: publish
+categories: []
+tags: []
+meta:
+  _edit_last: '9176468'
+  geo_public: '0'
+  _publicize_pending: '1'
+  _rest_api_published: '1'
+  _rest_api_client_id: "-1"
+  _wpas_skip_facebook: '1'
+  _wpas_skip_google_plus: '1'
+  _wpas_skip_twitter: '1'
+  _wpas_skip_linkedin: '1'
+  _wpas_skip_tumblr: '1'
+  _wpas_skip_path: '1'
+author:
+  login: cnak123
+  email: kisema@gmail.com
+  display_name: Cedric
+  first_name: ''
+  last_name: ''
+---
+<p>Since I switched to ITerm from Terminal, I missed being able to jump between words using the alt key and corresponding left and right keys.</p>
+<p>To change this, you have to go to iTerm's preferences then "Profiles" tab, select "Keys".   Change the keyboard shortcut   " ⌥← "  (option+left arrow)  action to   "Send Escape Sequence".   Beside the "Esc+" label, input the letter "b".</p>
+<p>Do the same for ⌥→ instead use the ""Esc+" and the letter "f"</p>
+<p><a href="https://fleetingdev.files.wordpress.com/2014/12/e382b9e382afe383aae383bce383b3e382b7e383a7e38383e38388-2014-12-22-16-56-19.png"><img class="alignnone size-medium wp-image-26" src="{{ site.baseurl }}/assets/e382b9e382afe383aae383bce383b3e382b7e383a7e38383e38388-2014-12-22-16-56-19.png?w=300" alt="スクリーンショット 2014-12-22 16.56.19" width="300" height="189" /></a></p>
+<p>Why this work?</p>
+<p>Strangely in terminal, jumping between words was marked with the "Escape key", very odd choice seeing, it stopped my flow each time I had to jump between a word, to make matters worse it jumps one word at a time and reverts to input mode.</p>
+<p>Ced</p>

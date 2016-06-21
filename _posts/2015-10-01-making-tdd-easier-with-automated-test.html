@@ -1,0 +1,75 @@
+---
+layout: post
+title: Making TDD easier in Ruby by automating your tests
+date: 2015-10-01 19:30:26.000000000 +01:00
+type: post
+published: true
+status: publish
+categories:
+- Ruby
+tags:
+- Ruby
+- TDD
+meta:
+  _wpcom_is_markdown: '1'
+  _rest_api_published: '1'
+  _rest_api_client_id: "-1"
+  _publicize_job_id: '15372052345'
+author:
+  login: cnak123
+  email: kisema@gmail.com
+  display_name: Cedric
+  first_name: ''
+  last_name: ''
+---
+<p>I'm a fan of test driven development, in order to speed up my turnaround time from writing functionality to testing the functionality, I use Guard(https://github.com/guard/guard) tool to automatically run my test any time I make a change.</p>
+<p><!--more-->This greatly speeds up my development time and hopefully it'll help you too.</p>
+<p>This is going to be our final files and folder structure.</p>
+<p>[code lang=text]<br />
+Gemfile<br />
+Gemfile.lock<br />
+Guardfile<br />
+lib<br />
+spec<br />
+[/code]</p>
+<p>##Dependencies Setup</p>
+<p>First step is to setup a gem file with the dependencies that we will be using.</p>
+<p>Create a new file named 'Gemfile' in your main project directory with the following contents</p>
+<p>[code lang=text]<br />
+#Gemfile<br />
+source &quot;https://rubygems.org&quot;</p>
+<p>gem &quot;rspec&quot;</p>
+<p>group :development do<br />
+gem &#039;guard&#039;<br />
+gem &#039;guard-rspec&#039;<br />
+end<br />
+[/code]</p>
+<p>Once done, run the bundle install commind in the terminal to install the dependencies, like so.</p>
+<p>[code lang=text]<br />
+bundle install<br />
+[/code]</p>
+<p>##Seting up Guard</p>
+<p>Create a new file named 'Guardfile' with the following content</p>
+<p>[code lang=text]<br />
+#Guardfile</p>
+<p>guard :rspec, cmd: &quot;bundle exec rspec --color&quot; do</p>
+<p>#Guardfile<br />
+# watch /lib/ files<br />
+watch(%r{^lib/(.+).rb$}) do |m|<br />
+&quot;spec/#{m[1]}_spec.rb&quot;<br />
+end</p>
+<p># watch /spec/ files<br />
+watch(%r{^spec/(.+).rb$}) do |m|<br />
+&quot;spec/#{m[1]}.rb&quot;<br />
+end<br />
+end<br />
+[/code]</p>
+<p>This file configures the Guardfile tool to watch for any changes to ruby files within the lib and spec directories and runs rspec.</p>
+<p>Note: We have taken this route of manually creating a Guardfile rather than running "guard init" so we more easily see what the guard file is doing. Guard init generates a lot of code that we won't be using in this guide.</p>
+<p>Finally we launch our Guard instance to start watching our files by running the following command in the terminal.</p>
+<p>[code lang=text]<br />
+guard<br />
+[/code]</p>
+<p>That's it, hopefully this helps speeds up your development time.</p>
+<p>Here is the completed repo (https://github.com/cnak/ruby_boilerplate)</p>
+<p>Cedric</p>

@@ -1,0 +1,59 @@
+---
+layout: post
+title: Reading and writing to a CSV in C#
+date: 2016-04-12 10:29:30.000000000 +01:00
+type: post
+published: true
+status: publish
+categories:
+- Tips
+tags:
+- 8L
+- c_sharp
+meta:
+  _rest_api_client_id: "-1"
+  _rest_api_published: '1'
+  _wpcom_is_markdown: '1'
+  _publicize_job_id: '21715031691'
+author:
+  login: cnak123
+  email: kisema@gmail.com
+  display_name: Cedric
+  first_name: ''
+  last_name: ''
+---
+<p>A simple way of reading and writing to a CSV is by using Visual Basic assembly file called FileIO, which can be easily imported by searching in the Reference Manager within Visual Studio Microsoft.VisualBasic.FileIO"</p>
+<h2>Write to the CSV</h2>
+<p>[code lang="java"]<br />
+var destinationPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);<br />
+var destinationFile = Path.Combine(destinationPath, &amp;quot;MyContacts.csv&amp;quot;);<br />
+private readonly string filename = destinationFile;<br />
+public void WriteToCsv(string input)<br />
+{<br />
+using (FileStream fileStream = new FileStream(filename, FileMode.Append,  FileAccess.Write))<br />
+using (var outputFile = new StreamWriter(fileStream))<br />
+{<br />
+outputFile.WriteLine(input);<br />
+}<br />
+}<br />
+[/code]</p>
+<p>Within the WriteToCsv method, we need to use filestream in a "using" block which will automatically disposed/cleans up the resource once it's finished with it. In addition we can specifiy access rights. This is crucial, without specifying, by default the file will not save in many locations on your file system.</p>
+<p>Within that block we can use a Streamwriter object to write line the input into our output file.</p>
+<h2>Read from the CSV</h2>
+<p>Reading from a CsV file requires the use of the TextFieldParser class. Pay attention to setting up your parser options, especially choosing your prefered delimiter. Look at docs for more options.</p>
+<p>[code lang="java"]<br />
+public void Parse_CSV(String Filename)</p>
+<p>using (var parser = new TextFieldParser(filename))<br />
+{<br />
+parser.SetDelimiters(&amp;quot;,&amp;quot;);<br />
+parser.TrimWhiteSpace = true;</p>
+<p>while (!parser.EndOfData)<br />
+{<br />
+string[] fieldRow = parser.ReadFields();<br />
+foreach (string fieldRowCell in fieldRow)<br />
+{</p>
+<p>// do something with firelds<br />
+}</p>
+<p>}<br />
+}</p>
+<p>[/code]</p>

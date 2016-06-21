@@ -1,0 +1,38 @@
+---
+layout: post
+title: "How to fix the \x93\"Too many gem names\"\x94 error when running \"gem build\""
+date: 2015-03-21 21:59:00.000000000 +00:00
+type: post
+published: true
+status: publish
+categories: []
+tags:
+- Gems
+- Ruby
+meta:
+  _wpcom_is_markdown: '1'
+  _rest_api_published: '1'
+  _rest_api_client_id: "-1"
+  geo_latitude: '51.507351'
+  geo_longitude: "-0.12775799999997162"
+  geo_address: イギリス グレーター・ロンドン ウェストミンスター
+  geo_public: '1'
+  _publicize_pending: '1'
+author:
+  login: cnak123
+  email: kisema@gmail.com
+  display_name: Cedric
+  first_name: ''
+  last_name: ''
+---
+<p>I was getting a strange error each time I ran "gem build tic_tac_toe.gemspec" in order to build a  gem I was working.</p>
+<p><a href="https://fleetingdev.files.wordpress.com/2015/03/e382b9e382afe383aae383bce383b3e382b7e383a7e38383e38388-2015-03-14-21-28-11.png"><img class="  aligncenter wp-image-92" src="{{ site.baseurl }}/assets/e382b9e382afe383aae383bce383b3e382b7e383a7e38383e38388-2015-03-14-21-28-11.png?w=300" alt="tooMany_error" width="529" height="54" /></a>.</p>
+<p><!--more--></p>
+<p>I had no idea where document was coming from. With a bit of google-fu I learnt about the gemrc file. A configuration file that hosts info about your gem files. Its hosted in your local user directory.</p>
+<p>On the Mac its located at:</p>
+<p>/Users/&lt;your_username&gt;/.gemrc</p>
+<p>Within this file I found</p>
+<p>gem: --no document</p>
+<p>Im not sure why that was there, so I backed up the config file then removed the line and voila gem build worked!</p>
+<p>Ced</p>
+<p>Here is a link to a sample <a title="gemrc sample" href="https://gist.github.com/jch/1331576" target="_blank">gemrc file  </a></p>

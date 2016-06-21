@@ -1,0 +1,26 @@
+---
+layout: post
+title: ListView or DataGrid
+date: 2016-04-21 20:47:28.000000000 +01:00
+type: post
+published: true
+status: publish
+categories: []
+tags:
+- 8L
+meta:
+  _wpcom_is_markdown: '1'
+  _rest_api_published: '1'
+  _rest_api_client_id: "-1"
+  _publicize_job_id: '22027397854'
+author:
+  login: cnak123
+  email: kisema@gmail.com
+  display_name: Cedric
+  first_name: ''
+  last_name: ''
+---
+<p>In my contact management app I was looking for a way to list contacts in a table. The simplest UIElement object that would allow me to do this.</p>
+<p>The ListView UIElement seemed the most appropriate, it list a data items, pretty much does what you want.</p>
+<p>With a listView one can display tabular data.....and that's about it(well, you can do other things). This is all fine until we want more CRUD like behaviour. That's where DataGrid comes in. The DataGrid class allows one to one binding with models which does make it easier for displaying and editing model data. The one on one binding also gives auto column generation which I don't find particular useful as it gives column names such as this. "FirstName", "LastName". See, no spaces between the fields, not sure how useful that is really as you probably want your own names with spaces. Of course you can override this and provide your own data binding and replace the column names.</p>
+<p>Simply put, if you want editable data use DataGrid, else ListViews. Or you could just use DataGrid and disable editing until you need. it</p>

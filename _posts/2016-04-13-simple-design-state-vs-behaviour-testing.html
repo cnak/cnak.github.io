@@ -1,0 +1,41 @@
+---
+layout: post
+title: 'Simple Design: State vs Behaviour testing'
+date: 2016-04-13 15:00:18.000000000 +01:00
+type: post
+published: true
+status: publish
+categories:
+- Design
+tags: []
+meta:
+  _wpcom_is_markdown: '1'
+  _rest_api_published: '1'
+  _rest_api_client_id: "-1"
+  _publicize_job_id: '21848404150'
+author:
+  login: cnak123
+  email: kisema@gmail.com
+  display_name: Cedric
+  first_name: ''
+  last_name: ''
+---
+<p>When we are facing a problem and taking the classic/Detroit style TDD we tend to start with the outermost object than work our way in. If we look at the Tic Tac Toe game, we may start with testing an empty board.</p>
+<p>[code lang=java]<br />
+public void TheBoardStartEmpty() {<br />
+var board = Board.new();<br />
+Assert.That(board, Is.Empty());<br />
+}<br />
+[/code]</p>
+<p>From this we may then process testing to see when the board is <em>not</em> empty, i.e. when a player makes a move.</p>
+<p>[code lang=java]<br />
+public void BoardNotEmptyAfterMove() {<br />
+var board = Board.new();<br />
+board.makeMove(1)<br />
+Assert.That(board.Empty(), Is.EqualTo(false));<br />
+[/code]</p>
+<p>Now this is something that I used to do and was happy with it. This approach flows naturally, feels like the simplest action that one can take. However there's a flaw in this approach. It leads down a path of a very state focused testing.</p>
+<p>We have to ask ourselves, what is it that we are really interesting in asserting? What is it that we want our system to do? These questions can lead us to a path of more behaviour focused learning. As long as we keep going up the chain of questioning, why am i doing this, why am i doing that.. we eventually get to what we<em>actually</em> want to test.</p>
+<p>We should aim to test only what is needed and what will bring us value. This can sometimes be tricky.</p>
+<p>So going back to board. Why do we want to know if the board is empty? Because we want to be able to make a move on a board. Why do we want to make a move on a board? Because we want to be able to win a Tic tac Toe game.</p>
+<p>That finally gives us the behaviour that we really want to test. We want to be able to verify that a winning move. Knowing this we can now begin testing that more valuable test, but we may find that we still need to assert that the board is first empty. That's perfectly okay as we can set the other test to a pending test so we can continue moving forward, but at least now we have a better understanding why we want to test an empty board when initialising a new board.</p>

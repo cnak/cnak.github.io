@@ -1,0 +1,48 @@
+---
+layout: post
+title: Lets Talk more Clojure
+date: 2016-04-29 22:00:12.000000000 +01:00
+type: post
+published: true
+status: publish
+categories:
+- Clojure
+tags:
+- 8L
+meta:
+  _wpcom_is_markdown: '1'
+  _rest_api_published: '1'
+  _rest_api_client_id: "-1"
+  _publicize_job_id: '22394983794'
+author:
+  login: cnak123
+  email: kisema@gmail.com
+  display_name: Cedric
+  first_name: ''
+  last_name: ''
+---
+<h3>Sets</h3>
+<p>Sets are simply a mathematical set, which means it retuns the no duplicates from a collection.</p>
+<p>A collection such as the one below only returns the unique elements.</p>
+<p>[code lang=clojure]<br />
+&lt;br /&gt;(set &#039;(1 1 1 2 2 2 3 3 3))</p>
+<p>#{1 2 3}<br />
+[/code]</p>
+<p>To retrieve the union of two collections, you can use the union method.</p>
+<p>[code lang=clojure]<br />
+(require &#039;clojure.set)</p>
+<p>(set/union #{4 2 1} #{ 2 3 4 })<br />
+[/code]</p>
+<p>To get the intersection, unsurprisingly, we wuse the intersection method</p>
+<p>[code lang=clojure]<br />
+(set/intersection #{1 2 3 4} #{2 3 5})</p>
+<p>#{2 3}<br />
+[/code]</p>
+<h3>Higher order functions</h3>
+<p>One of the aspects that I like about clojure is that it's lisp and functional.</p>
+<p>Which means we can write code like this.</p>
+<p>[code lang=clojure]<br />
+((fn [f] (f 4 5)) *)<br />
+[/code]</p>
+<p>A function taking another function. Essential a higher order function, this I believe makes for some elegant code solutions.</p>
+<p>I will talk more about this next time.</p>

@@ -1,0 +1,48 @@
+---
+layout: post
+title: Higher order funcitons
+date: 2016-05-19 08:21:31.000000000 +01:00
+type: post
+published: true
+status: publish
+categories:
+- Clojure
+tags:
+- 8L
+meta:
+  _wpcom_is_markdown: '1'
+  _rest_api_published: '1'
+  _rest_api_client_id: "-1"
+  _publicize_job_id: '22997465848'
+author:
+  login: cnak123
+  email: kisema@gmail.com
+  display_name: Cedric
+  first_name: ''
+  last_name: ''
+---
+<p>We are used to in object oriented programming to pass variables into parameter arguments, return values from methods.</p>
+<p>What higher order functions allow us to do is pass in functions themselves into other functions as parameter arguments</p>
+<p>A popular example of a higher order function is the 'map' function found in various languages such as Clojure and Ruby. The map function takes a collection type and a function as it's parameter and then applies the function on each element within the collection, finally return the result as a new collection. Pretty powerful stuff.<br />
+Another example of a function within the core clojure and ruby library is the filter function, which can take a function as a predicate, then filtering out elements from collection based on the result of that function.</p>
+<p>Higher order functions don't stop just there, as we can return functions as an output from a function.<br />
+Returning functions from other functions can be a way to reduce duplication. Scenarios whereby you have a conditional split and the only difference is that if result "a", call "functionA". result "b", call "functionb".</p>
+<h3>Examples</h3>
+<p>An example of passing in a function.</p>
+<p>[code lang=clojure]<br />
+&lt;br /&gt;(defn double [function x]<br />
+(function (function x)))</p>
+<p>(double #(+ % 3) 6)<br />
+;=&gt; result 12<br />
+[/code]</p>
+<p>Another example showing how we concat a collection of number and return elements odd or even depending on the function that we pass through</p>
+<p>[code lang=clojure]<br />
+(defn concat-some<br />
+[f col col2]<br />
+((fn [x] (filter f x))<br />
+(concat col col2)))</p>
+<p>(concat-some even? [1 2 3] [4 5 6])<br />
+; result (2 4 6)<br />
+(concat-some odd? [1 2 3] [4 5 6])<br />
+; result (1 3 5)<br />
+[/code]</p>

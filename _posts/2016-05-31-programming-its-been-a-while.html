@@ -1,0 +1,50 @@
+---
+layout: post
+title: Programming.....It's been a while.
+date: 2016-05-31 20:31:42.000000000 +01:00
+type: post
+published: true
+status: publish
+categories:
+- Clojure
+- Diary
+tags:
+- 8L
+- Clojure
+- minimax
+meta:
+  _wpcom_is_markdown: '1'
+  _rest_api_published: '1'
+  _rest_api_client_id: "-1"
+  _publicize_job_id: '23375821497'
+author:
+  login: cnak123
+  email: kisema@gmail.com
+  display_name: Cedric
+  first_name: ''
+  last_name: ''
+---
+<p>My first day back to work, I delved back into the unbeatable tic tac toe computer player in my Clojure implementation.</p>
+<p>Having taking a step back from the code, I've noticed a few interesting elements about my old implmentation of the minimax algorithm.</p>
+<p>The first unnessary complexity that came apparent to me was the amount of small helper methods that existed solely to unpack a complex sequence type data structure.</p>
+<p>Two scoring methods, one for the final game state and another used for unfinished game state. Removing the intermediate scoring simplflefy the code.</p>
+<p>Finally there was a method that generated multiple game states. Moving the logic under the minimax method reduce some confusion. While the code wasn't doing what I wanted just yet, but at least I was now in a state to move forward.</p>
+<p>I knew I wanted a loop of some type, and every loop needs a terminating condition. So what would be the terminating condition for the minimax.</p>
+<p>Well first we have to decide what is it that we ultimately want...</p>
+<p>We want the best move that will lead the current player to Victory! Or the very least a draw but never a defeat.</p>
+<p>Scoring each possible move and it's pemutation will allow us to then pick the move with the highest scoring. Which means we need to build a score collection and a move collection. Scoring is done once a game state is over. Now we know our terminating condition</p>
+<p>[code lang="clojure"]<br />
+(game-over? board)<br />
+(score board)<br />
+[/code]</p>
+<p>Should look like something like above.</p>
+<p>Now we need to build our moves with their associate scores. We can retrieve our remaining moves which is relatively straightforward. The trickier part is getting the scoring of each of move and the permutation. Not only that but we have to assume that the opponent will also play their best move.</p>
+<p>What I don't know how to clearly do in Clojure is to get the opponent's best move.</p>
+<p>[code lang="clojure"]<br />
+(def board<br />
+[&amp;quot;X&amp;quot; &amp;quot;X&amp;quot; &amp;quot;-&amp;quot;<br />
+&amp;quot;O&amp;quot; &amp;quot;O&amp;quot; &amp;quot;-&amp;quot;<br />
+&amp;quot;X&amp;quot; &amp;quot;O&amp;quot; &amp;quot;-&amp;quot;])</p>
+<p>{2 99, 5 {2 {8 0}, 8 {2 97}}, 8 {2 {5 0}, 5 98}}<br />
+[/code]</p>
+<p>From above, we can see that the collection is returning move 2 as the best move with a score of 99. The tricky part is how to extract the highest scored move from this nested collection.</p>

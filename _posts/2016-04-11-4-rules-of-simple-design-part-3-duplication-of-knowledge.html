@@ -1,0 +1,94 @@
+---
+layout: post
+title: '4 Rules of simple design part 3: Duplication of knowledge'
+date: 2016-04-11 07:55:28.000000000 +01:00
+type: post
+published: true
+status: publish
+categories:
+- Design
+tags:
+- 8L
+meta:
+  _publicize_job_id: '21668232639'
+  _wpcom_is_markdown: '1'
+  _rest_api_published: '1'
+  _rest_api_client_id: "-1"
+author:
+  login: cnak123
+  email: kisema@gmail.com
+  display_name: Cedric
+  first_name: ''
+  last_name: ''
+---
+<p>When designing, we should ask ourselves what happens when we change something. And if we were to change, how much effort is required? how many places will have to change.<br />
+Continuing with the Game of life example. For our next set we want to set that a cell is alive at a certain location.</p>
+<p>We could provide a x and y coordinates like so.</p>
+<p>[code lang="java"]<br />
+public class World {</p>
+<p>public void SetLivingAt(int x, int y) {<br />
+//...<br />
+}</p>
+<p>public void IsAliveAt(int x, int y) {<br />
+//<br />
+}</p>
+<p>}</p>
+<p>[/code]</p>
+<p>This appears like a resonable approach to take, which will then lead us to changing the LivingCell and the DeadCell to include this coordinates.</p>
+<p>[code lang="java"]<br />
+public class LivingCell<br />
+private int x;<br />
+private int y;</p>
+<p>public int X {<br />
+get { return x }<br />
+}</p>
+<p>public int Y {<br />
+get { return y }<br />
+}<br />
+}<br />
+public class DeadCell<br />
+private int x;<br />
+private int y;</p>
+<p>public int X {<br />
+get { return x }<br />
+}</p>
+<p>public int Y {<br />
+get { return y }<br />
+}<br />
+}<br />
+[/code]</p>
+<p>However this approach can lead to a few changes and it's because of the subtle duplication of knowledge. The world class is now aware of the implementation details of the living cell. Also in this particular code example, it has the symptoms of primitive obsession.</p>
+<p>A solution to primitive obsession and lower the knowledge duplication is extracting that knowledge into an abstraction away from LivingCell and injecting that abstraction in.</p>
+<p>[code lang="java"]<br />
+public class Location {<br />
+private int x;<br />
+private int y;</p>
+<p>public int X {<br />
+get { return x }<br />
+}</p>
+<p>public int Y {<br />
+get { return y }<br />
+}<br />
+}</p>
+<p>public class World {</p>
+<p>public void SetLivingAt(Location location) {<br />
+//...<br />
+}</p>
+<p>public void IsAliveAt(Location location) {<br />
+//<br />
+}<br />
+}<br />
+public class LivingCell<br />
+private Location location;</p>
+<p>public Location Location {<br />
+get { return location }<br />
+}<br />
+}<br />
+public class DeadCell<br />
+private Location location;</p>
+<p>public Location Location {<br />
+get { return location }<br />
+}<br />
+}<br />
+[/code]</p>
+<p>Now that the Location knowledge is extracted, if we wanted to change  where locations are calculated, say introducing a third variable, "z", we only have...excuse the pun... location to change.</p>

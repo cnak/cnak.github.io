@@ -1,0 +1,46 @@
+---
+layout: post
+title: Methods should tell a story.
+date: 2016-02-17 18:38:22.000000000 +00:00
+type: post
+published: true
+status: publish
+categories: []
+tags:
+- 8L
+meta:
+  _wpcom_is_markdown: '1'
+  _rest_api_published: '1'
+  _rest_api_client_id: "-1"
+  _publicize_job_id: '19904372532'
+author:
+  login: cnak123
+  email: kisema@gmail.com
+  display_name: Cedric
+  first_name: ''
+  last_name: ''
+---
+<p>Before completing my echo server, my mentor noticed that I wasn't using test doubles effectively. He suggested that I do spike of the echo server to get a better idea how the final implementation would look like.</p>
+<p>Once I had completed the spike, I was happy with the start method initially but since completing it again using TDD and with the use of my private methods, the start method is looking a lot clean.</p>
+<p>Exhibit A</p>
+<blockquote><p>public void Start() {</p>
+<p>string message = "";</p>
+<p>PromptUser();<br />
+while (IsExitCode(message)) {<br />
+output.Write(message + "\n");<br />
+}<br />
+}</p></blockquote>
+<p>Exhibit B</p>
+<blockquote><p>public void Start() {<br />
+PrintWelcomeMessage();<br />
+while (true) {<br />
+ReadUserInput();<br />
+ReadSpecialCaseInput();<br />
+if (CheckIfExitInput())<br />
+break;<br />
+Echo(input);<br />
+}<br />
+}</p></blockquote>
+<p>Not only was Exhibit A in fact hiding some side effects in the private methods ( looking at your isExitCode) it wasn't telling a story the way Exhibit B, tells a story. Exhibit B has aa nicer flow because each method name is descriptive about it's execution.</p>
+<p>Methods should be short as possible and tell a story and not only this, it makes it easier to unit test behaviour.</p>
+<p>Ced</p>

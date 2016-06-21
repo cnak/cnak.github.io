@@ -1,0 +1,29 @@
+---
+layout: post
+title: What is simple enough?
+date: 2016-04-05 21:32:13.000000000 +01:00
+type: post
+published: true
+status: publish
+categories:
+- Craftmanship
+tags:
+- 8L
+meta:
+  _wpcom_is_markdown: '1'
+  _rest_api_published: '1'
+  _rest_api_client_id: "-1"
+  _publicize_job_id: '21526436959'
+author:
+  login: cnak123
+  email: kisema@gmail.com
+  display_name: Cedric
+  first_name: ''
+  last_name: ''
+---
+<p>While working on persistence on my Contacts management, I researched around and decided on using XML file format to save my contacts to disk. Initially I decided on this approach because C# had decent support for reading and writing XML files. Making it relatively straightforward to implement within my allocated 2 points that I gave the story.</p>
+<p>After speaking with Jim about it, he pointed out that a simpler approach would be a JSON or a csv file format. While I completely agree this I simpler file format and I'm not a fan of XML, who wants to deal with all the different idiosyncrasies of that format, at the time I thought that only my app would handling the reading and writing, not any 3rd party external apps so it wouldn't be problem. This was not the best way of thinking about it. It should always be what's the simplest approach when can take. But what happens when the simplest approach to take isn't the easiest to implement? What if the simplest approach increases the story point and so we can no longer deliver to the client on time?</p>
+<p>Austrian and American philosopher Leopild Kohr said "Small is beautiful". If we apply it to code implementation then we mean, small methods are better than large methods. smaller moving parts are better than many moving parts.</p>
+<p>However this argument isn't so simple... While the xml implementation is relatively simple because a lot of the heavy lifting is done by the .NET framework. The file format that is being written (XML), I would say isn't always simple.</p>
+<p>On the other side of the fence, you have to use Visual Basic assembly files to implement CSV support, specifying the delimiters etc, which may or may not be as simple as the XML implementation.</p>
+<p>So ultimately, answering the question "Is this simple?", isn't so simple.</p>

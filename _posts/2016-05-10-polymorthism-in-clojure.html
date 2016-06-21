@@ -1,0 +1,104 @@
+---
+layout: post
+title: Polymorphism in Clojure
+date: 2016-05-10 08:38:54.000000000 +01:00
+type: post
+published: true
+status: publish
+categories:
+- Clojure
+tags:
+- 8L
+meta:
+  _wpcom_is_markdown: '1'
+  _rest_api_published: '1'
+  _rest_api_client_id: "-1"
+  _publicize_job_id: '22766378161'
+author:
+  login: cnak123
+  email: kisema@gmail.com
+  display_name: Cedric
+  first_name: ''
+  last_name: ''
+---
+<p>First lets define what is Polymorphism. Simply put, polymorphism is about having a single interface for different data types.</p>
+<h2>Different types of polymorthism</h2>
+<p>There are different types, some with different names.</p>
+<ul>
+<li>Static binding Time<br />
+This is related to method overloading</li>
+<li>Dynamic binding</li>
+</ul>
+<p>Related to method overriding</p>
+<p>[code lang="java"]<br />
+interface Animal {<br />
+void makeNoise ();<br />
+}</p>
+<p>Dog implements Animal {<br />
+public void makeNoise() {<br />
+System.out.println(&amp;quot;Woof!&amp;quot;);<br />
+}<br />
+}<br />
+Cat implements Animal {<br />
+public void makeNoise() {<br />
+System.out.println(&amp;quot;Meow!&amp;quot;);<br />
+}<br />
+}<br />
+class Main {<br />
+public static void main(String args[]) {<br />
+Animal cat = new Cat();<br />
+Animal dog = new Dog();</p>
+<p>cat.makeNoise();//output: &amp;quot;Meow!&amp;quot;</p>
+<p>dog.makeNoise();//output:&amp;quot;Woof!&amp;quot;<br />
+}<br />
+}<br />
+[/code]</p>
+<p>The output changes because of the different Animal data type.</p>
+<p>Clojure being a dynamic language, we will be focusing on dyanmic polymorphism</p>
+<h2>Problem</h2>
+<p>You want to build function that changes dependent on the argument given.</p>
+<h2>Possible Solutions</h2>
+<p>An already existing used of Polymorphism in Clojure is the cons method which will add an element to a given list/vector/set input and return the result.</p>
+<p>We could use if-branching, cond or condp. But these aren't really polymorphic.</p>
+<p>Lets have a look below.</p>
+<p>[code lang="clojure"]<br />
+(defn greet [name]<br />
+(if (empty? name)<br />
+(str &amp;quot;hello annon, how are you?&amp;quot;)<br />
+(str &amp;quot;hello &amp;quot; name &amp;quot;, how are you?&amp;quot;)))<br />
+[/code]</p>
+<p>This could work but it's not idiomatic. Clojure has a better way of handling this kind of scenario.</p>
+<p>We have a few possible solutions in Clojure that we could use to perform our own polymorphism.</p>
+<h3>Multi-arity functions</h3>
+<p>Arity is simply the number of input arguments in the function.</p>
+<p>[code lang="clojure"]<br />
+(defn greet<br />
+([] (greet &amp;quot;anon&amp;quot;))<br />
+([name] (str &amp;quot;hello &amp;quot; name &amp;quot;, how are you?&amp;quot;))<br />
+([name &amp;amp; more] (str &amp;quot;hello &amp;quot;<br />
+(apply str<br />
+(interpose &amp;quot;, &amp;quot;<br />
+(cons name more)))<br />
+&amp;quot;, how are we all?&amp;quot;)))<br />
+[/code]</p>
+<p>The greet function overloads itself when no argument is passed in, but what we can also do is handle more than 2 arguments are passed in.</p>
+<h3>Multi-methods</h3>
+<p>Multi-methods is a great way to introduce polymorphism. It reminds me when you go to the theatre. The usher takes your ticket(the input) and then directs you where you should sit(output) depending on whether you're in premium seating, front row etc.</p>
+<p>Clojure achieves this behaviour by defining a dispatching function with dispatching values which then determine the appropriate method to call.</p>
+<p>[code lang="clojure"]<br />
+(defmulti dance-style(fn [input] (:style input)))<br />
+(defmethod dance-style (:hip-hop [a] (str (:name a) &amp;quot; loves to pop and lock.&amp;quot;))<br />
+(defmethod dance-style :ballet [a] (str (:name a) &amp;quot; loves to gracely move.&amp;quot;))<br />
+(defmethod dance-style :default [a] ( str &amp;quot;I don&#039;t know what &amp;quot; (:name a) &amp;quot;. Has he&#039;s own style&amp;quot;))</p>
+<p>(dance-style {:style :hip-hop :name &amp;quot;Cedric&amp;quot; :age 20 :experience :mid-level})<br />
+(dance-style {:style :ballet :name &amp;quot;Jada&amp;quot; :age 4 :experience :junior})<br />
+(dance-style{:name &amp;quot;Chuck Norris&amp;quot;})<br />
+[/code]</p>
+<p>So now when we call</p>
+<p>[code lang="clojure"]<br />
+(defn get-dance-style [style]<br />
+(dance-style style))</p>
+<p>=&gt;&quot;Cedric loves to pop and lock.&quot;<br />
+[/code]</p>
+<p>Another thing you can do is have multi-methods across namesapces. This can be a good way to separate the different dance styles(in this example)<br />
+So you can then place all the hip-hop related dancers in the same namespace, all the ballet in their own namespace.</p>

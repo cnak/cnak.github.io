@@ -1,0 +1,30 @@
+---
+layout: post
+title: 'Diary 4th April: Spikes are useful'
+date: 2016-04-04 20:43:30.000000000 +01:00
+type: post
+published: true
+status: publish
+categories:
+- Diary
+tags:
+- 8L
+meta:
+  _wpcom_is_markdown: '1'
+  _rest_api_published: '1'
+  _rest_api_client_id: "-1"
+  _publicize_job_id: '21489315719'
+author:
+  login: cnak123
+  email: kisema@gmail.com
+  display_name: Cedric
+  first_name: ''
+  last_name: ''
+---
+<p><span style="text-decoration:underline;"></span></p>
+<p>Today I paired with Rabea on adding persistence to my Contact management app. I feel I don't pair enough and so for the next few weeks I'll be doing a pairing exchange with every apprentice. It goes like this one day I spend 1hour pair programming on their project, another day we spend 1 hour pairing on mine. This way both apprentices get help and not too much time is taken away from completing our respective iterations.</p>
+<p>Rabea and I started looking at the project, firstly she wanted to use the app to get an idea of what she was dealing with. Once completed we delved into the code.</p>
+<p>I began explaining what was the feature requested. "A user should be able to see their contacts on restart." I had introduced a IContactStorage interface that declares a contract of the required methods to store contact data. It could be argued that this interface was perhaps introduced too early, however I introduced it because I had Dependency Inversion Principle in mind when previously the CreateContact process was dependent on a low level module ContactStorage. Now with the CreateContact being dependent on an abstract, it is easier to swap our different types of storage mechanisms.</p>
+<p>Now it was a case of introducing a new class that implements the IContactStorage interface, however while we were discussing this, we realised we hadn't decided on how to implement the solution. Which meant....SPIKE time!</p>
+<p>I'm beginning to see the real value of spikes. I think I saw the benefit when I once paired with Mateu on something and he did it.</p>
+<p>So I plan on using Spikes a lot more often, I imagine it'll be useful I'm not familiar with a framework or a language, and of course, do the simplest thing that'll will work.</p>

@@ -1,0 +1,40 @@
+---
+layout: post
+title: Writing to Memory Streams in C#
+date: 2016-02-11 17:32:50.000000000 +00:00
+type: post
+published: true
+status: publish
+categories: []
+tags:
+- 8L
+- c_sharp
+meta:
+  _wpcom_is_markdown: '1'
+  _rest_api_published: '1'
+  _rest_api_client_id: "-1"
+  _publicize_job_id: '19739063230'
+author:
+  login: cnak123
+  email: kisema@gmail.com
+  display_name: Cedric
+  first_name: ''
+  last_name: ''
+---
+<p>Picking up from where we left off from stream reading, this time we'll be discussing writing.</p>
+<p>Here is the code below we will be discussing.</p>
+<blockquote><p>private MemoryStream stream;</p>
+<p>1 public void Write(string message) {<br />
+2        using (StreamWriter streamWriter = new StreamWriter (stream)) {</p>
+<p>3        streamWriter.Write (message);<br />
+4        streamWriter.Flush ();<br />
+}<br />
+}</p></blockquote>
+<p>Line 1 is our method declaration and we will be passing in a string argument.<br />
+Line 2 has the keyword "using", which makes certain that we expose of the streamWriter object once it's been used.<br />
+Streamwriter is a class that implements, TextWriter it is used for writing characters to a stream using encoding(default encoding is used if not specified)</p>
+<p>In this line it's taking a MemoryStream object.</p>
+<p>Line 3 uses the write method which can take a plethora of object types, such as 'Char', 'String', 'Double', look in the MSDN documentation for more details.</p>
+<p>The methods writes a text representation to the stream, which is nice and handy.</p>
+<p>Line 4 Will flush the stream writer meaning it will clear out the buffer but the stream will remain open. To close the stream we can call StreamWriter's close method.<br />
+Ced</p>

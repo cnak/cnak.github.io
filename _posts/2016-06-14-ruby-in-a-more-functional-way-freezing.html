@@ -1,0 +1,36 @@
+---
+layout: post
+title: 'Ruby in a more functional way : Freezing'
+date: 2016-06-14 18:09:58.000000000 +01:00
+type: post
+published: true
+status: publish
+categories: []
+tags:
+- 8L
+meta:
+  _wpcom_is_markdown: '1'
+  _rest_api_published: '1'
+  _rest_api_client_id: "-1"
+  _publicize_job_id: '23832965276'
+author:
+  login: cnak123
+  email: kisema@gmail.com
+  display_name: Cedric
+  first_name: ''
+  last_name: ''
+---
+<p>One of the tenets of functional programming is immutability.</p>
+<h3>Freezing variables</h3>
+<p>Immutable values means that once a variable has been set, it can never change. It's forever the same, immutable.</p>
+<p>But wait a second, if a variable is frozen....doesn't it mean that it no longer varies? which means it's not longer a variable? exactly, it becomes a constant!</p>
+<p>[code lang="ruby"]<br />
+life_constant = &amp;quot;change&amp;quot;<br />
+life_constant.freeze<br />
+life_constant = &amp;quot;taxes&amp;quot;<br />
+[/code]</p>
+<p>If you try the above means you get a runtime error, as you can't modify a frozen string.</p>
+<h3>Freezing objects</h3>
+<p>Sidenote, no point freezing Fixnums as they are already immutable objects.</p>
+<p>After having a chat with my mentors, it seems that there's not much value in freezing objects. A particular reason why one would freeze an object is due to a lack of trust. Defensive programming. Being afraid that someone is going to mutate the object underneath your feet. Perhaps a better approach is teach your team and having a code base where the team doesn't feel the need to mutate the object.</p>
+<p>I'm not sure, what I am sure about is that using freeze is not idiomatic in ruby. Plus you would have freeze all over your codebase, which would be yuck.</p>

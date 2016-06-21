@@ -1,0 +1,43 @@
+---
+layout: post
+title: Reading Memory Streams in C#
+date: 2016-02-10 19:48:09.000000000 +00:00
+type: post
+published: true
+status: publish
+categories: []
+tags:
+- 8L
+- c_sharp
+meta:
+  _wpcom_is_markdown: '1'
+  _rest_api_published: '1'
+  _rest_api_client_id: "-1"
+  _publicize_job_id: '19674333620'
+author:
+  login: cnak123
+  email: kisema@gmail.com
+  display_name: Cedric
+  first_name: ''
+  last_name: ''
+---
+<p>I have been working with streams the last couple of days and they were confusing at first, especially the way C# does it differently to Java.</p>
+<p>With the help of MSDN and nearby kind craftspeople, it's beginning to become clearer.</p>
+<p>We will use a simple example to explain how they work.</p>
+<p>Let say we want to create a console that reads and writes to a stream. Luckily for us in C# we have a handy class called 'MemoryStream' which shockingly creates a stream.</p>
+<p>We can pass this MemoryStream into our constructor like so</p>
+<blockquote><p>public AwesomeConsole (MemoryStream stream) {<br />
+this.stream = stream;<br />
+}</p></blockquote>
+<p>We are assigning it to a private field here so we can use it later in our read and write methods.</p>
+<p>Lets move on to the Read method.</p>
+<blockquote><p>public string Read () {<br />
+var streamReader = new StreamReader (stream);<br />
+return streamReader.ReadToEnd ();<br />
+}</p></blockquote>
+<p>Here we are using the 'var' keyword which does away for the need for explicitly type declarations which is quite nice (not at the time though)</p>
+<p>We instantiate a new StreamReader object, passing a 'Stream' to it's constructor.</p>
+<p>The StreamReader class reads characters from a byte stream, depending on the characters that you're willing to accept, you may have to include a require Encoding such as UTF8Encoding. For the sake of simplicity we won't doing that.</p>
+<p>Streams are like old fashion cassette tapes( go further back, Betamax tapes), in that we can rewind them, fast forward to a moment in the stream. In this case we want to read to the end of the stream using the appropriately name method 'ReadToEnd' which returns us our string object.</p>
+<p>Tomorrow will be part 2... writing to streams.</p>
+<p>Ced</p>

@@ -1,0 +1,43 @@
+---
+layout: post
+title: Once you eliminate the simplest solution, whatever remains, no matter how improbable,
+  might still be the simplest
+date: 2016-04-20 19:55:52.000000000 +01:00
+type: post
+published: true
+status: publish
+categories: []
+tags:
+- 8L
+meta:
+  _wpcom_is_markdown: '1'
+  _rest_api_published: '1'
+  _rest_api_client_id: "-1"
+  _publicize_job_id: '22025953429'
+author:
+  login: cnak123
+  email: kisema@gmail.com
+  display_name: Cedric
+  first_name: ''
+  last_name: ''
+---
+<p>I was pairing with Mollie today trying to help her with some test she had written that was giving a NullPointerException. It was one of those peculiar problem that looked straightforward to fix at first glance. However the more we looked at it together, the more our perspective changed.</p>
+<p>At first glance we thought it was the before annotation not working. Seeing as I had spent the past 3 months and months before that with Ruby, I began forgetting some JUnit syntax. Mollie kindly reminded me that it's "assertEquals()". Did I forget to mention that we were using Vim? No Jetbrains helper here.</p>
+<p>The asserts continue to fail anyhow, so I figured I would write a new test, that would simply test a String object equals to "hello". How could that possibly fail? It passed, so now we knew it wasn't the annotation. What could it be?</p>
+<p>We continue researching, looking at different unit tests, when we looked at our tests, we noticed a glaring mistake.</p>
+<p>[code lang="java"]<br />
+public class TestClass</p>
+<p>private app game;</p>
+<p>@Before<br />
+public void setUp(){<br />
+Game game = new Game();</p>
+<p>App app = new App(game);<br />
+}</p>
+<p>@Test<br />
+public void TestGameStarts(){<br />
+app.Start();<br />
+assert.that(app.isStarted, is.equalsTo(true));<br />
+}<br />
+[/code]</p>
+<p>Yup! Clear as day when I look at it now. It's obvious to me why we were getting an NPE.</p>
+<p>Now I'm not sure why I didn't see it straightaway. It could be that I was using ruby before looking at this code. It could be that I thought it was the environment setup(we were using vim) or simply it could simply be that I'm human sometimes we just don't see these things straightaway. In either case I've yet been reminded that if someone asks you for help, start from the most obvious possible solution, then work your way up to the improbable.</p>

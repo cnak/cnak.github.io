@@ -1,0 +1,58 @@
+---
+layout: post
+title: Few things I dislike about the Ruby language.
+date: 2015-03-14 20:33:24.000000000 +00:00
+type: post
+published: true
+status: publish
+categories:
+- Ruby
+tags:
+- Programming
+- Ruby
+meta:
+  _publicize_pending: '1'
+  _rest_api_published: '1'
+  _rest_api_client_id: "-1"
+  _wpcom_is_markdown: '1'
+author:
+  login: cnak123
+  email: kisema@gmail.com
+  display_name: Cedric
+  first_name: ''
+  last_name: ''
+---
+<p>I've been learning Ruby for a while, it has mainly been a joyous experience. It has opened my mind in many different ways.<br />
+I glee in delight when I think to myself I wonder if that will work..? and Ruby surprises me when it does.</p>
+<p>Saying that, there are a few things that still bother me, perhaps Im not used to it, perhaps there's a better way that I just dont know.</p>
+<p>Here is a list of things I dislike about my latest favourite programming language.</p>
+<p><!--more--></p>
+<h2>Monkey Patching</h2>
+<p>Monkey patching is when you modify the core Ruby API with your own custom method.<br />
+For example if you wanted to add an additional method to the Array class named all_same?. You can define<br />
+class Array<br />
+def all_same?<br />
+#your code here<br />
+end</p>
+<p>Ruby will be happy to modify the core API with the new method that you've just declared. Sounds good, right. This is all fine and dandy when you are when you are working on a small project, in fact when I first found out about this I was delighted.<br />
+It becomes an issue when the project becomes larger and larger and you become using other devs gems and code. You have no clue whether a developer thought it was a good idea to modify one of the methods of the core string class.</p>
+<h2>Different ways to do the same thing.</h2>
+<p>This is another one of those problem that will rear its ugly head when you're working on a code that's been touch by many developers.<br />
+Hopefully as one becomes more experience in a language, you have a way of coding and hopefully that follows coding standards on the platform that you're currently developing on, however some developer kee. This bothered me more so when I first begun learning ruby as it was confusing to me why a code I was looking at would use "Array.collect" and not "Array.map", then I find out they essentially the same thing. Interfaces in the core API are full of these little nuggets.</p>
+<p>Enumerable.detect == Enumerable.find, Enumerable.find_all == Enumerable.select, Enumerable.to_a == Enumerable.entries, Hash.has_key? == Hash.include? == Hash.key? == Hash.member?, Hash.has_value? == Hash.value?, Hash.indexes == Hash.indices, Hash.length == Hash.size, Hash.merge! == Hash.update, String.succ == String.next</p>
+<p>Another one that bothered me, blocks can be surrounded by curly braces or "do, end". However I found out after some reading, most ruby devs use curly braces for one line code and "do,end" for multi line blocks. So this one isn't such a big issue.</p>
+<p>An agreed consistent coding standard would increase readability when reading other developer's code.</p>
+<p>Space or braces? Braces all the way.</p>
+<p>Look at the following two code snippets.. which is more readable?</p>
+<p>myArray = Array.new 10 or<br />
+myArray = Array.new(10)</p>
+<p>The first one bothers me, plus if you want to specify multiple arguments then you have no choice but to use braces, like below, I reckon it's better to use the second form for consistency sake</p>
+<p>myArray = Array.new(10, true)</p>
+<h2>Ruby is dynamically typed, Strongly typed but it's not statically typed.</h2>
+<p>This is one issue that I found the most difficult to deal with, it makes debugging more difficult than it needs to be. Perhaps it could be more background in more statically typed languages but I'm sure it'll get easier with time.</p>
+<h2>Nitpicks</h2>
+<p>I understand that the following aren't really problems, just a few things that irk me when I first started learning Ruby. I'm sure Matz had good reasons for picking the following keywords. For one reason or another I'm just not fond of them.</p>
+<p>Certain keywords such as "puts", "elsif" and "initialize".</p>
+<p>These of course are all minor issues, they don't really detract from the wonderful experience of programming in the Ruby language.</p>
+<p>Hope to learn more about this wonderful language as I target becoming a full stack web developer.</p>
+<p>Ced</p>

@@ -1,0 +1,38 @@
+---
+layout: post
+title: End of iteration 6 review
+date: 2016-03-07 16:25:13.000000000 +00:00
+type: post
+published: true
+status: publish
+categories:
+- Diary
+tags:
+- 8L
+meta:
+  _wpcom_is_markdown: '1'
+  _rest_api_published: '1'
+  _rest_api_client_id: "-1"
+  _publicize_job_id: '20522623852'
+author:
+  login: cnak123
+  email: kisema@gmail.com
+  display_name: Cedric
+  first_name: ''
+  last_name: ''
+---
+<h3>Estimations are still difficult</h3>
+<p>I finished off the "Implement a Human Vs Human" from last week. I underestimate this story quite a bit, I did not expect the testing of the while loop and some corrections after speaking to my mentor to add an additional 5 points!</p>
+<p>Because of this my mentor rightly brought this up as something I need to focus on in the future when giving estimations.</p>
+<h3>Don't introduces interfaces too early.</h3>
+<p>An important reminder I was given while developing my human vs human functionality, is ordering is important, especially when it comes to test doubles and introducing class interfaces.</p>
+<p>I had introduced an Interface class for my game console too early, which resulted in updating the interface with new methods while testing, which also meant updating my test double class, as my test double class implemented the Game console class. A massive pain and lesson well learned.</p>
+<h3>Checked exceptions can be troublesome</h3>
+<p>I had a couple of interesting discussions with a few craftsmen this week about the value of checked exceptions. While I personally don't like to use checked exceptions myself, if I have to I use custom checked exceptions, but even that I feel a bit quesy inside.</p>
+<p>Chris simply suggested that I use a boolean flag to check whether a move is valid, rather than throwing an exception and catching elsewhere, thus polluting the code base.</p>
+<h3>Validations, who's responsibility is it anyways</h3>
+<p>Who's responsibility is it to valid objects. Is it the object itself, a validation object that handles validation for other objects... I ran out of time this week, so this is a question to think about in the future.</p>
+<h3>Iteration 7, the AI is coming</h3>
+<p>For this week I'm introducing a dumb AI, I probably should say, a beatable AI player.<br />
+This will result in a rewrite of (some) my logic and introduce new classes, looking forward to this.</p>
+<p>Ced</p>

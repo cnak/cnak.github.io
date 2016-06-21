@@ -1,0 +1,37 @@
+---
+layout: post
+title: Diary 29th February
+date: 2016-02-29 22:09:06.000000000 +00:00
+type: post
+published: true
+status: publish
+categories:
+- Diary
+tags:
+- c_sharp
+meta:
+  _wpcom_is_markdown: '1'
+  _rest_api_published: '1'
+  _rest_api_client_id: "-1"
+  _publicize_job_id: '20306106282'
+author:
+  login: cnak123
+  email: kisema@gmail.com
+  display_name: Cedric
+  first_name: ''
+  last_name: ''
+---
+<p>Today I worked on my tic tac toe application. I starter with wanting to test my Game class but then discovered that I had not implemented a move method in the board class.</p>
+<h3>Delegation everywhere</h3>
+<p>Although the game class itself has a play move method, however it delegates the responsibility to the board class.</p>
+<p>I imagine that the Game class will delegate a lot of it's operations, such as view related methods, boards. It's almost just a delation class that's glueing objects together. Perhaps it's structure much change in the future as the design changes.</p>
+<h3>Mutable or immutable</h3>
+<p>I spent maybe 1hr trying a immutable approach of the implementation but found that perhaps I hadn't properly grasped the concept of mutability, so instead in the current implementation the board is mutable.</p>
+<h3>Who's responsibility is it anyways?</h3>
+<p>Spending some time with the board class raised further questions. Questions such as, what happens when a client enters an invalid move, such as passing in 10, when there's only 9 available positions on a 3x3 board.<br />
+Another problematic scenario is when a space is already occupied. Should the playMove method return a false boolean or should it throw an exception?</p>
+<p>It depends on whether I see it an exceptional circumstance if a client passes a position that's already taken. Either case I'm requiring the client to handle the case on their end, whether it is by catching the exception or handling the false bool value.</p>
+<p>I decided on throwing an exception as I wanted the client to take responsibility and handle the exception. The client should know whether it wants to play a different move or do something else. The choice should be theirs, what's important is that they're notified. With a bool value it's not as clear I feel.</p>
+<p>In the end it's about being more conscious about each decision we make, being aware of the trade offs.</p>
+<p>&nbsp;</p>
+<p>Ced</p>

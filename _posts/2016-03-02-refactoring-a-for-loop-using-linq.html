@@ -1,0 +1,70 @@
+---
+layout: post
+title: Refactoring a for loop using  Linq
+date: 2016-03-02 18:59:26.000000000 +00:00
+type: post
+published: true
+status: publish
+categories: []
+tags:
+- 8L
+- c_sharp
+meta:
+  _wpcom_is_markdown: '1'
+  _publicize_job_id: '20370583906'
+  _rest_api_client_id: "-1"
+  _rest_api_published: '1'
+author:
+  login: cnak123
+  email: kisema@gmail.com
+  display_name: Cedric
+  first_name: ''
+  last_name: ''
+---
+<h2>Do the smallest thing that works</h2>
+<p>We do the smallest thing that works first so that we can reach the solution quicker. With good test we know we can refactor to our hearts content to make the code cleaner, readable and above a joy to work with.</p>
+<h2>The Mess</h2>
+<p>I had the following code below.......</p>
+<blockquote><p>private int CalculateRemainingMoves()<br />
+{<br />
+char[] markers = grid.ToCharArray();<br />
+int count = 0;</p>
+<p>foreach (var marker in markers)<br />
+{<br />
+if (IsValidMarker(marker)<br />
+{<br />
+count += 1;<br />
+}<br />
+}</p>
+<p>return count;<br />
+}<br />
+}</p></blockquote>
+<p>This was the quickest code that I wanted to write to get my test to pass. A simple method that calculates the remaining moves on a grid.</p>
+<h4>Smell</h4>
+<p>This code bothered me.<br />
+- For one it has too many lines<br />
+- The temporary 'count' variable is used in 3 places... yuc<br />
+- It hurts my soul</p>
+<h2>First steps</h2>
+<p>The first temporary variables 'markers' doesn't bother me too much as it indicates what the individual grid elements are, so I'll keep that.</p>
+<p>The first action to take is to take away the 'count' temporary variable.</p>
+<h2>Linq to the rescue (not that other link from that legend of a game)</h2>
+<p>The markers data type being a char, we can use a handy linq method called Count, which unsurprisingly counts the number of elements in the collection. However we didn't just want to count the number of elements, we wanted to count the elements which were valid i.e 'X' or 'O' in our Tic Tac Toe game.<br />
+Luckily by passing our method 'IsValidMarker', the count method will call the specified method on each element of the collection and only add them to the count if they valid. How neat!</p>
+<p>This drastically reduces the code.</p>
+<p>Our final code looks like this....</p>
+<blockquote><p>private int CalculateRemainingMoves()<br />
+{<br />
+var markers = grid.ToCharArray();</p>
+<p>return markers.Count(IsValidMarker);<br />
+}</p></blockquote>
+<p>Now doesn't that look nicer..</p>
+<p>hmm on second thought I might remove that temporary variable.... :)</p>
+<p>UPDATE!</p>
+<p>I refactored the code again, couldn't help myself.</p>
+<blockquote><p>private int CalculateRemainingMoves()</p>
+<p>{</p>
+<p>return (grid .Length - grid.Count(IsValidMarker());</p>
+<p>}</p>
+<p>&nbsp;</p></blockquote>
+<p>Ced</p>

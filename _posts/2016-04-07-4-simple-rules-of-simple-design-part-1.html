@@ -1,0 +1,47 @@
+---
+layout: post
+title: 4 Simple Rules of simple design part 1
+date: 2016-04-07 16:39:48.000000000 +01:00
+type: post
+published: true
+status: publish
+categories:
+- Design
+tags:
+- 8L
+meta:
+  _wpcom_is_markdown: '1'
+  _rest_api_published: '1'
+  _rest_api_client_id: "-1"
+  _publicize_job_id: '21553848906'
+author:
+  login: cnak123
+  email: kisema@gmail.com
+  display_name: Cedric
+  first_name: ''
+  last_name: ''
+---
+<h3>Have the mindset of better design and not best design</h3>
+<p>At times I suffer from coding paralysis. I used to want the best design up front, so I would be in a state where I would continue thinking without doing any productive work. I am beginning to realise that it's not even about the best design. It's about a better design than the one I have. With this mindset I can look for the simplest action I can take, that will improve my design, and with tests I know I can always refactor later to improve the design further.</p>
+<h3>Strive for adaptable design</h3>
+<p>One constant in life and software development is change, our code should strive to do be adaptable to change. If it's not, the code becomes more difficult to maintain, eventually being abandoned.</p>
+<p>When you have a decision to make, make a change based on what would be easier to change, what is causing pain right now. Change it. Objects too tightly coupled? Too difficult add a new feature? When you are experiences these moments, whatever you decide, base your decision on what would be easier to change.</p>
+<h2>The Four Rules of Design</h2>
+<ol>
+<li>Tests Pass<br />
+All tests should pass. Test verify that the correctness of behaviour and are reliable enough that you're comfortable refactoring</li>
+<li>
+<p>Expresses Intent<br />
+Always keep your names relavent, from classes, methods, fields. They shoudl represent the intent. The moment it comes for you to make a change, it should be relatively easy<br />
+to find the location to make that change.</p>
+</li>
+<li>
+<p>No Duplication (DRY)<br />
+Not just code duplication, but perhaps more importantly knowledge duplication.</p>
+</li>
+<li>
+<p>Fewest elements</p>
+</li>
+</ol>
+<p>The smallest amount of components as possible. That means minimazing the number of classes and methods. It'll make it easier when you need to add a features, refactor, running of tests etc</p>
+<p>Following these rules won't give you the best design, but it will almost most definitely lead to better design.</p>

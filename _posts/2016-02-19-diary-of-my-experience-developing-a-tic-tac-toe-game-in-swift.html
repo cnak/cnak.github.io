@@ -1,0 +1,46 @@
+---
+layout: post
+title: Diary of my experience developing a Tic Tac toe game in Swift (part 1)
+date: 2016-02-19 17:02:35.000000000 +00:00
+type: post
+published: true
+status: publish
+categories: []
+tags:
+- 8L
+meta:
+  _wpcom_is_markdown: '1'
+  _rest_api_published: '1'
+  _rest_api_client_id: "-1"
+  _publicize_job_id: '19971489604'
+author:
+  login: cnak123
+  email: kisema@gmail.com
+  display_name: Cedric
+  first_name: ''
+  last_name: ''
+---
+<p>I've never developed a Swift application in iOs before but I thought it would be fun to spend some time rapidly developing a Tic Tac Toe game and document my experience.</p>
+<p>My first step is find out how to setup an ios environment. This part was easy as I had previously had to setup Xcode in order to get the developer tools installed on my machine.</p>
+<h2>Swift Playground</h2>
+<p>Swift has a really cool playground which was really interesting. I plan on playing in the playground later on to learn more about the language.</p>
+<p>From the Apple iOS documentation<br />
+"A playground is an interactive Swift coding environment that evaluates each statement and displays results as updates are made, without the need to create a project."</p>
+<h2>Setting up the project</h2>
+<p>I delved right into it by creating a "Single View Application" iOs project. Single View application because the game will only have a single view. Seeing as this simple rapid developed application won't be doing any persistant saving. We won't be using core data.</p>
+<p>Once the Project is created, I jumped into the properties of the file and made sure that the device orientation for the app stays in Portrait mode, adding support for Landscape will add to the complexity.</p>
+<p>I wanted to remove auto layout and this one is just a preference, in my small experience with autoLayout, I found it to be too intrusive.</p>
+<h2>Image assets</h2>
+<p>We need image assets which will be our Markers and the lines that represent the grid.</p>
+<p>When creating new image sets, I had to be mindful of the various sizes, in order to support the different resolutions that are on the many iOs devices out there.</p>
+<p>This being rapid development, I quickly mocked out two grids jpegs in Photoshop.</p>
+<p>grid_320_569.jpg<br />
+grid_640_1138.jpg</p>
+<h2>Adding Image as Background</h2>
+<p>To add the background image asset. I created a UIImageView and placed it on top the first View that the user will see the moment they launch the application.</p>
+<h2>Adding clickable images</h2>
+<p>To add clickable images we first create 9 clickable image views then we add 9 buttons that overlay those images. These buttons will later be attached to IBActions.</p>
+<p>Next up we will can begin plumbing, adding the images,buttons, views to the respective code. I'll cover that in a separate blog post.</p>
+<p>&nbsp;</p>
+<hr />
+<p>Ced</p>

@@ -1,0 +1,51 @@
+---
+layout: post
+title: Variables in Swift
+date: 2016-03-04 13:55:12.000000000 +00:00
+type: post
+published: true
+status: publish
+categories:
+- waza
+tags:
+- 8L
+- Swift
+meta:
+  _wpcom_is_markdown: '1'
+  _rest_api_published: '1'
+  _rest_api_client_id: "-1"
+  _publicize_job_id: '20428992125'
+author:
+  login: cnak123
+  email: kisema@gmail.com
+  display_name: Cedric
+  first_name: ''
+  last_name: ''
+---
+<p>Like many languages, Swift has its variables and constants. Swift offers a REPL like environment called Playground, which I have been using to learn more about the language.</p>
+<h4>Variables</h4>
+<p>We can assign a variable with an unknown type by doing the following.</p>
+<blockquote><p>var welcomeMessage = "Hello World"</p></blockquote>
+<p>As you can see we don't need a semi colon to close the declaration which is nice.</p>
+<h4>Constants</h4>
+<p>Next up let's declare a Pi constant</p>
+<blockquote><p>let PI = 3.14</p></blockquote>
+<p>actually on second thought, lets do it another way, a better way.</p>
+<blockquote><p>let π = 3.1415926535</p></blockquote>
+<p>yup, we can use unicode within our code without any problems, a nice touch.</p>
+<p>This mean we can include a Japanese Kanji characters as a variable name too.</p>
+<blockquote><p>let 日本語= "Japanese Language".</p></blockquote>
+<p>And if unicode characters are acceptable then emoji are fair game too..</p>
+<blockquote><p>let 🐶🐮 = "pets"</p></blockquote>
+<p>let 😀a = "smiley"</p>
+<p>I personally prefer let as it signifies that the variable won't change in the future and if you have the standard var, than you're saying that the variable will change, will raises further questions.</p>
+<h4>Inline multiples variables</h4>
+<blockquote><p>var age = 19, name = "Ced", isAdult = true</p></blockquote>
+<h4>Variable type declarations</h4>
+<p>We can introduce type declarations by declaring variables with our desired type. For example</p>
+<blockquote><p>var name : String<br />
+name = 55;</p></blockquote>
+<p>This will cause the following error...<br />
+// error: type 'String' does not conform to protocol IntegerLiteralConvertible'</p>
+<p>That's it for variables in Swift.<br />
+Ced</p>
