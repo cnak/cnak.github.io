@@ -42,12 +42,11 @@ module StringHelper
     string.capitalize
   end
 end
-
 {% endhighlight %}
 {% highlight ERB %}
 <!-- In the View -->
 <h2>
-Hello, <%= capitalize @user.name %>
+  Hello, <%= capitalize @user.name %>
 </h2>
 {% endhighlight %}
 
