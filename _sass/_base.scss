@@ -1,6 +1,11 @@
 /*
  * Clean css theme for Markdown files by c_nak [https://github.com/cnak]
  */
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
 body {
   color: #333333;
   line-height: 1.7em;
@@ -8,6 +13,7 @@ body {
   font-weight: 200;
   background-color: white;
   margin: 0 auto;
+
 }
 p {
   line-height: 1.7em;
@@ -227,6 +233,14 @@ pre {
   }
 }
 
+.post {
+    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 2s; /* Firefox < 16 */
+        -ms-animation: fadein 2s; /* Internet Explorer */
+         -o-animation: fadein 2s; /* Opera < 12.1 */
+            animation: fadein 2s;
+}
+
 .post-content {
   margin-bottom: 25%;
 }
@@ -280,13 +294,21 @@ h1.page-heading {
     display: inline-flex;
   }
 
+  @media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2) { 
+    width: 70%;
+    position: relative;
+  }
+
 }
 
 .blog-index {
   width: 40%;
-    @include media-query($on-laptop) {
-      width: 0%;
-    }
+  @include media-query($on-laptop) {
+    width: 0%;
+  }
 }
 section {
   display: table;
