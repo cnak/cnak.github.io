@@ -87,7 +87,7 @@ h6 {
 h1 {
     border-top: 1px solid #aaa;
     padding-top: .9em;
-    font: 4.0em "Helvetica Neue", "Open Sans", sans-serif;
+    font: 3.5em "Helvetica Neue", "Open Sans", sans-serif;
     color: #353535;
     font-weight: 100;
 }
@@ -164,7 +164,7 @@ code {
     font-size: 15px;
     border: 1px solid $grey-color-light;
     border-radius: 3px;
-    background-color: #eef;
+    background-color: #f9f9f9;
 }
 
 code {
@@ -172,7 +172,7 @@ code {
 }
 
 pre {
-    padding: 8px 12px;
+    padding: 20px 12px;
     overflow-x: auto;
 
     > code {
