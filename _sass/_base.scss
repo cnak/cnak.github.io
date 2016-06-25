@@ -248,3 +248,17 @@ pre {
   color: #828282;
   font-weight: 100
 }
+
+@-webkit-keyframes greenPulse {
+  from { background-color: white;}
+  50% { background-color: #e4e4e4;}
+  to {}
+}
+
+.home-button {
+  border-radius: 100px;
+  color: #c44141;
+  -webkit-animation-name: greenPulse;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+}
