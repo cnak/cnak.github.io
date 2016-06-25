@@ -294,6 +294,9 @@ section {
   max-width: none;
   background-color: #373B44;
   height: 100vh;
+  @include media-query($on-laptop) {
+  height: 0px;
+  }
 }
 
 .content {
@@ -348,7 +351,8 @@ section {
     color: white;
     font-weight:600;
     @include media-query($on-laptop) {
-      color:black;
+      color:#777777;
+      font-weight:100;
     }
   }
   .letter:nth-child(1) {
