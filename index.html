@@ -1,22 +1,54 @@
 ---
 layout: default
 ---
+<div class="container">
 
-<div class="home">
+  <div class="home">
 
-  <h1 class="page-heading">Posts</h1>
-
-  <ul class="post-list">
-    {% for post in site.posts %}
+    <h1 class="page-heading">Posts</h1>
+    <ul class="post-list">
+      {% for post in site.posts %}
       <li>
         <h2>
           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
         </h2>
         <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
       </li>
-    {% endfor %}
-  </ul>
+      {% endfor %}
+    </ul>
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+    <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
 
+  </div>
+
+  <section class="intro"> 
+    <div class="content">
+      <div class="my-info fade-in">
+        <p>Software Developer</p>
+
+        <div class="name">
+          <span class='letter'>CED</span>
+          <span class='letter'>RI</span>
+          <span class='letter'>C</span>
+          <span class='letter'>&nbsp</span>
+          <span class='letter'>KI</span>
+          <span class='letter'>SE</span>
+          <span class='letter'>MA</span>
+        </div>
+
+        <p>Crafting beautiful software</p>
+
+        <div class="social fade-in two">
+          <ul class=social-icons> 
+            <li><a href="https://twitter.com/c_nak">  <i class="fa fa-twitter fa-2x"></i> </li>
+            <li><a href="https://github.com/cnak">  <i class="fa fa-github fa-2x"></i> </li>
+            <li><a href="https://uk.linkedin.com/in/cedrickisema">  <i class="fa fa-linkedin fa-2x"></i> </li>
+            <li><a href="#" class="trigger">Blog</a></li>
+          </ul>
+        </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
 </div>
