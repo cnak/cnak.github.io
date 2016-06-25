@@ -7,6 +7,8 @@ $$('.trigger').addEvent('click', function(event) {
 
   if ('500px' > intro.getStyle('width')) {
     intro.tween('width', '500px');
+  } else {
+    intro.tween('width', '400px');
   }
 
   var body = $$('body')[0];
