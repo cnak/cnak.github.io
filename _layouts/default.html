@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
-
   {% include head.html %}
-
   <body>
-
-    {% include header.html %}
 
     <div class="page-content">
       <div class="wrapper">
         {{ content }}
       </div>
     </div>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mootools/1.6.0/mootools-core-compat.js"
+></script>
+    <script type="text/javascript" src="{{ "js/main.js" | prepend: site.baseurl }}"></script>
 
   </body>
 

@@ -2,78 +2,79 @@
  * Clean css theme for Markdown files by c_nak [https://github.com/cnak]
  */
 body {
-    color: #333333;
-    line-height: 1.7em;
-    font-family: "Helvetica Neue", "Open Sans", sans-serif;
-    font-weight: 200;
-    background-color: white;
+  color: #333333;
+  line-height: 1.7em;
+  font-family: "Helvetica Neue", "Open Sans", sans-serif;
+  font-weight: 200;
+  background-color: white;
+  margin: 0 auto;
 }
 p {
-    line-height: 1.7em;
+  line-height: 1.7em;
 }
 table {
-    font-size: inherit;
-    font: 100%;
-    margin: 1em;
+  font-size: inherit;
+  font: 100%;
+  margin: 1em;
 }
 table th {
-    border-bottom: 1px solid #bbb;
-    padding: .2em 1em;
+  border-bottom: 1px solid #bbb;
+  padding: .2em 1em;
 }
 table td {
-    border-bottom: 1px solid #ddd;
-    padding: .2em 1em;
+  border-bottom: 1px solid #ddd;
+  padding: .2em 1em;
 }
 input[type=text],
 input[type=password],
 input[type=image],
 textarea {
-    font: 99% helvetica, arial, freesans, sans-serif;
+  font: 99% helvetica, arial, freesans, sans-serif;
 }
 select,
 option {
-    padding: 0 .25em;
+  padding: 0 .25em;
 }
 optgroup {
-    margin-top: .5em;
+  margin-top: .5em;
 }
 
 pre {
-    margin: 1em 0;
-    font-size: 12px;
-    background-color: #eee;
-    border: 1px solid #ddd;
-    padding: 5px;
-    line-height: 1.5em;
-    color: #444;
-    overflow: auto;
-    -webkit-box-shadow: rgba(0, 0, 0, 0.07) 0 1px 2px inset;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
+  margin: 1em 0;
+  font-size: 12px;
+  background-color: #eee;
+  border: 1px solid #ddd;
+  padding: 5px;
+  line-height: 1.5em;
+  color: #444;
+  overflow: auto;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.07) 0 1px 2px inset;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
 }
 
 img {
-    border: 0;
-    max-width: 100%;
+  border: 0;
+  max-width: 100%;
 }
 abbr {
-    border-bottom: none;
+  border-bottom: none;
 }
 a {
-    color: #4183c4;
-    text-decoration: none;
+  color: #4183c4;
+  text-decoration: none;
 }
 a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 a:link code,
 a:visited code {
-    color: #4183c4;
+  color: #4183c4;
 }
 h2,
 h3 {
-    margin: 1em 0;
+  margin: 1em 0;
 }
 h1,
 h2,
@@ -81,68 +82,68 @@ h3,
 h4,
 h5,
 h6 {
-    border: 0;
-    color: black;
+  border: 0;
+  color: black;
 }
 h1 {
-    border-top: 1px solid #aaa;
-    padding-top: .9em;
-    font: 3.5em "Helvetica Neue", "Open Sans", sans-serif;
-    color: #353535;
-    font-weight: 100;
+  border-top: 1px solid #aaa;
+  padding-top: .9em;
+  font: 3.5em "Helvetica Neue", "Open Sans", sans-serif;
+  color: #353535;
+  font-weight: 100;
 }
 h1:first-child {
-    padding-top: .25em;
-    border-top: none;
+  padding-top: .25em;
+  border-top: none;
 }
 h1:first-letter {
-    color: red;
+  color: red;
 }
 h2 {
-    font-size: 150%;
-    margin-top: 1.5em;
-    padding-top: .5em;
-    font: 200 2.0em "Helvetica Neue", "Open Sans", sans-serif;
+  font-size: 150%;
+  margin-top: 1.5em;
+  padding-top: .5em;
+  font: 200 2.0em "Helvetica Neue", "Open Sans", sans-serif;
 }
 h3 {
-    margin-top: 1em;
-    color: #AAAAAA;
-    font: 200 1.2em "Helvetica Neue", "Open Sans", sans-serif;
+  margin-top: 1em;
+  color: #AAAAAA;
+  font: 200 1.2em "Helvetica Neue", "Open Sans", sans-serif;
 }
 hr {
-    border: 1px solid #ddd;
+  border: 1px solid #ddd;
 }
 ul {
-    margin: 1em 0 1em 2em;
+  margin: 1em 0 1em 2em;
 }
 ol {
-    margin: 1em 0 1em 2em;
+  margin: 1em 0 1em 2em;
 }
 ul li,
 ol li {
-    margin-top: .7em;
-    margin-bottom: .7em;
+  margin-top: .7em;
+  margin-bottom: .7em;
 }
 ul ul,
 ul ol,
 ol ol,
 ol ul {
-    margin-top: 0;
-    margin-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 blockquote {
-    margin: 1em 0;
-    border-left: 5px solid #ddd;
-    padding-left: .6em;
-    color: #555;
+  margin: 1em 0;
+  border-left: 5px solid #ddd;
+  padding-left: .6em;
+  color: #555;
 }
 dt {
-    font-weight: bold;
-    margin-left: 1em;
+  font-weight: bold;
+  margin-left: 1em;
 }
 dd {
-    margin-left: 2em;
-    margin-bottom: 1em;
+  margin-left: 2em;
+  margin-bottom: 1em;
 }
 
 /**
@@ -152,7 +153,7 @@ h1, h2, h3, h4, h5, h6,
 p, blockquote, pre,
 ul, ol, dl, figure,
 %vertical-rhythm {
-    margin-bottom: $spacing-unit / 2;
+  margin-bottom: $spacing-unit / 2;
 }
 
 
@@ -161,44 +162,38 @@ ul, ol, dl, figure,
  */
 pre,
 code {
-    font-size: 15px;
-    border: 1px solid $grey-color-light;
-    border-radius: 3px;
-    background-color: #f9f9f9;
+  font-size: 15px;
+  border: 1px solid $grey-color-light;
+  border-radius: 3px;
+  background-color: #f9f9f9;
 }
 
 code {
-    padding: 1px 5px;
+  padding: 1px 5px;
 }
 
 pre {
-    padding: 20px 12px;
-    overflow-x: auto;
+  padding: 20px 12px;
+  overflow-x: auto;
 
-    > code {
-        border: 0;
-        padding-right: 0;
-        padding-left: 0;
-    }
+  > code {
+    border: 0;
+    padding-right: 0;
+    padding-left: 0;
+  }
 }
 /**
  * Wrapper
  */
 .wrapper {
-    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
-    max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
-    margin-right: auto;
-    margin-left: auto;
-    padding-right: $spacing-unit;
-    padding-left: $spacing-unit;
-    @extend %clearfix;
+  @extend %clearfix;
 
-    @include media-query($on-laptop) {
-        max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
-        max-width:         calc(#{$content-width} - (#{$spacing-unit}));
-        padding-right: $spacing-unit / 2;
-        padding-left: $spacing-unit / 2;
-    }
+  @include media-query($on-laptop) {
+    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
+    max-width:         calc(#{$content-width} - (#{$spacing-unit}));
+    padding-right: $spacing-unit / 2;
+    padding-left: $spacing-unit / 2;
+  }
 }
 
 
@@ -208,11 +203,11 @@ pre {
  */
 %clearfix {
 
-    &:after {
-        content: "";
-        display: table;
-        clear: both;
-    }
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
 }
 
 
@@ -222,20 +217,28 @@ pre {
  */
 .icon {
 
-    > svg {
-        display: inline-block;
-        width: 16px;
-        height: 16px;
-        vertical-align: middle;
+  > svg {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
 
-        path {
-            fill: $grey-color;
-        }
+    path {
+      fill: $grey-color;
     }
+  }
 }
 
 .post-content {
   margin-bottom: 25%;
+}
+
+.post-title-header {
+  font-weight:100;
+}
+
+h1.page-heading {
+  font-size: 2.5em;
 }
 
 #signature {
@@ -261,4 +264,168 @@ pre {
   -webkit-animation-name: greenPulse;
   -webkit-animation-duration: 2s;
   -webkit-animation-iteration-count: infinite;
+  height:0px;
 }
+
+// Intro section
+
+.intro {
+  background-image: url("../images/pattern.png");
+  width: 100%;
+  position:fixed;
+}
+
+.blog-index {
+  width: 40%;
+}
+section {
+  display: table;
+  margin: 0;
+  max-width: none;
+  background-color: #373B44;
+  height: 100vh;
+}
+
+.content {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.my-info {
+  margin-left:25%;
+}
+
+/* ---------------------------------------------- /*
+ * Typography
+ /* ---------------------------------------------- */
+
+ .social {
+   padding-top: 10%;
+ }
+
+ .social > ul {
+   list-style:none;
+ }
+ ul.social-icons > li {
+   display:inline-block;
+   padding-right: 5%;
+ }
+
+ ul.social-icons {
+   margin: 0;
+ }
+
+ .fa {
+   color:#9fa1a5;
+ }
+ @media all and (max-width: 500px) { 
+
+   .social {
+     margin:0;
+   }
+
+   .name {
+     font-size:.5em;
+   }
+ }
+
+ /* ---------------------------------------------- /*
+  * Fade Animation
+  /* ---------------------------------------------- */
+
+  .letter {
+    font-size:2em;
+    color: white;
+    font-weight:600;
+  }
+  .letter:nth-child(1) {
+    /* -webkit-animation: fade 4s infinite 200ms; */
+    animation: fade 9s infinite 1200ms;
+  }
+  .letter:nth-child(2) {
+    /* -webkit-animation: fade 4s infinite 400ms; */
+    animation: fade 9s infinite 1400ms;
+  }
+  .letter:nth-child(3) {
+    /* -webkit-animation: fade 4s infinite 600ms; */
+    animation: fade 9s infinite 1600ms;
+  }
+  .letter:nth-child(4) {
+    /* -webkit-animation: fade 4s infinite 800ms; */
+    animation: fade 9s infinite 1800ms;
+  }
+  .letter:nth-child(5) {
+    -webkit-animation: fade 4s infinite 1000ms;
+    animation: fade 9s infinite 11000ms;
+  }
+  .letter:nth-child(6) {
+    -webkit-animation: fade 4s infinite 1200ms;
+    animation: fade 9s infinite 11200ms;
+  }
+  .letter:nth-child(7) {
+    -webkit-animation: fade 4s infinite 1400ms;
+    animation: fade 9s infinite 11400ms;
+  }
+
+  @-webkit-keyframes fade {
+    50% {
+      opacity: 0.02;
+    }
+  }
+
+  @keyframes fade {
+    50% {
+      opacity: 0.02;
+    }
+  }
+
+  /* make keyframes that tell the start state and the end state of our object */
+  @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+  @-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+  @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+  .fade-in {
+    opacity:0;  /* make things invisible upon start */
+    -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+    -moz-animation:fadeIn ease-in 1;
+    animation:fadeIn ease-in 1;
+
+    -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+    -moz-animation-fill-mode:forwards;
+    animation-fill-mode:forwards;
+
+    -webkit-animation-duration:1s;
+    -moz-animation-duration:1s;
+    animation-duration:1s;
+  }
+
+  .fade-in.one {
+    -webkit-animation-delay: 0.7s;
+    -moz-animation-delay: 0.7s;
+    animation-delay: 0.7s;
+  }
+
+  .fade-in.two {
+    -webkit-animation-delay: 1.2s;
+    -moz-animation-delay:1.2s;
+    animation-delay: 1.2s;
+  }
+
+  .fade-in.three {
+    -webkit-animation-delay: 1.6s;
+    -moz-animation-delay: 1.6s;
+    animation-delay: 1.6s;
+  }
+
+  .container {
+    position:relative;
+  }
+  .home {
+    z-index: -10;
+    position: absolute;
+  }
+
+  a.trigger {
+    color: white;
+    text-decoration: none;
+  }
