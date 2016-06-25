@@ -191,8 +191,6 @@ pre {
   @include media-query($on-laptop) {
     max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
     max-width:         calc(#{$content-width} - (#{$spacing-unit}));
-    padding-right: $spacing-unit / 2;
-    padding-left: $spacing-unit / 2;
   }
 }
 
@@ -273,10 +271,22 @@ h1.page-heading {
   background-image: url("../images/pattern.png");
   width: 100%;
   position:fixed;
+
+  @include media-query($on-laptop) {
+    background-image: none;
+    background-color: white;
+    width: 0%;
+    position:fixed;
+    display: inline-flex;
+  }
+
 }
 
 .blog-index {
   width: 40%;
+    @include media-query($on-laptop) {
+      width: 0%;
+    }
 }
 section {
   display: table;
@@ -337,6 +347,9 @@ section {
     font-size:2em;
     color: white;
     font-weight:600;
+    @include media-query($on-laptop) {
+      color:black;
+    }
   }
   .letter:nth-child(1) {
     /* -webkit-animation: fade 4s infinite 200ms; */
