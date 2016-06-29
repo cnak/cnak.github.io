@@ -193,6 +193,9 @@
 
 .post-wrapper {
   margin: 5% 20%;
+    @include media-query($on-laptop) {
+      margin: 5% 5%;
+    }
 }
 
 /**
