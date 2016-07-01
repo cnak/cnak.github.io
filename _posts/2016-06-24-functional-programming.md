@@ -93,11 +93,11 @@ my_function
 
 a function has been declared within a function! When we call "my_function" we get a symbol back but not the function. Strange behaviour I find. I would expect to get a function back, so maybe ruby doesn't treat functions as first class citizens.
 
-But what about high order functions?
+But what about higher order functions?
 
-### High order functions
+### Higher order functions
 
-High order functions follows these two rules
+Higher order functions follows these two rules
 
 - Accepts a function as an input argument.
 - Return a functions as the return value
