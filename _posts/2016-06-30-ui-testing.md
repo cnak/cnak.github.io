@@ -2,14 +2,11 @@
 title: User testing with Capybara
 comments: true
 layout: post
-date: 2016-06-24
+date: 2016-06-30
 category: 
 ---
 
-
-#User testing with Capybara
-
-#Cucumber
+## Cucumber
 
 Writing unit test is important for less stress and more productivity in the long run, why shouldn't we have the same love for UI testing?
 
