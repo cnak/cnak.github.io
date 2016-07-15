@@ -130,7 +130,8 @@ h2 {
 }
 h3 {
     margin-top: 1em;
-    color: #AAAAAA;
+    /* color: #AAAAAA; */
+    color: green;
     font: 200 1.2em "Helvetica Neue", "Open Sans", sans-serif;
 }
 hr {
