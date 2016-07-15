@@ -56,3 +56,4 @@ Table2 contains repeating data. For a single value of projectCode, there are man
 
 The attribute **projectCode** is a reference to table 1 to show the one-to-many relationship between the project and the crafters. Simply the crafter working on the project.
 
+Next blog post we will be looking at converting to 2nd Normal form.
