@@ -1,5 +1,5 @@
 ---
-title: Ajax and me
+title: Starting with Ajax
 comments: true
 layout: post
 date: 2016-07-06
