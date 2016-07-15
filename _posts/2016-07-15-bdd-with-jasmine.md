@@ -28,12 +28,12 @@ When we test drive our code, we first write a failing test , then write as littl
 This approach leads to better code because:
 
 - only the minimum amount of code is written to make the test pass.
-- it makes code more testable 
-- it leads to better code (this is debatable but I believe it to be true)
+- it makes it easier to refactor the code (associated specs)
+- it makes it easier for the developer to think about code design
 
 ## Start in the Red phase
 
-First step is to write a failing test in our spec file. We will be using Jasmine, a BDD framework for testing Javascript code. I personally like it as it offers quite a lot out of the box. It does not require a DOM. And if you have experience with RSpec in ruby land, you'll feel right at home.
+The first step is to write a failing test in our spec file. We will be using Jasmine, a BDD framework for testing Javascript code. I personally like it as it offers quite a lot out of the box. It does not require a DOM. And if you have experience with RSpec in ruby land, you'll feel right at home.
 
 {% highlight javascript %}
 //Spec, fizzBuzzSpec.js
@@ -47,7 +47,7 @@ it ( 'returns Fizz for input 3', function(){
 }
 {% endhighlight %}
 
-That's right, this takes in nothing. Then we run the test. This is where things get interesting. It's possible to run the tests with Jasmine's specRunner.html or set up karma(https://karma-runner.github.io/1.0/index.html).
+That's right, this takes in nothing. Then we run the test. This is where things get interesting. It's possible to run the tests with Jasmine's specRunner.html or set up [karma](https://karma-runner.github.io/1.0/index.html).
 
 ### Setting up SpecRunnerHtml
 
@@ -82,7 +82,7 @@ Make sure to reference your implementation files and spec files that will be use
 
 With the specRunner.html set up, open the file in your favourite browser and viola! Jasmine runs all the specs and gives us a nice User Interface.
 
-What we see is the first failing test. Next step is to write as little as code to get to the green phase.
+What we see is the first failing test. Next step is to write as little code to get the spec to pass (to be in the green phase).
 
 ## Green phase
 
@@ -98,15 +98,15 @@ The simplest code to get the code to pass is to return a constant. Which may see
 
 Oh but wait... there's not much to refactor at the moment, so we write our next spec.  The next spec will force us to change our implementation.
 
-note: I've ommited the entire spec declaration for brevity.
+note: I've omitted the spec declaration for brevity.
 
 {%highlight javascript %}
   expect(fizzBuzz(0)).toEqual("");
 {% endhighlight %}
 
-We run spec runner again. The spec fails, which is exactly what we want.
+We run spec runner again. The test fails, which is exactly what we want.
 
-Now we write as little to get to green. At this point we introduce a conditional to pass the spec.
+Now we write as little code as possible to get to green. At this point we introduce a conditional to pass the spec.
 
 {%highlight javascript %}
 var fizzBuzz : function( number ){
@@ -121,14 +121,13 @@ Again we run the test and we should now be in green. The implementation might no
 
 We repeat these small steps of adding a spec, writing enough to pass and if we need to, refactor the code. Slowly testing the function. But when do we refactor? When I feel some pain.
 
-I refactor when I feel the code is perhaps getting 
-There are different reasons why you might feel some pain in your code. It could because of code duplication, knowledge duplication, or you figure that you are at the wrong level of abstraction, it could be you need to extra some methods into private functions to make the code more readable.
+I refactor when I feel the code is causing me some discomfort. 
+There are different reasons why you might feel some pain in your code. It could be because of code duplication, knowledge duplication, or you figure that you are at the wrong level of abstraction.
+It could be for various reasons, whatever it may be, the moment you feel the pain, refactor your code.
 
-Whatever it may be, the moment you feel the pain, refactor your code.
+Let's get to a stage where the code could cause some discomfort
 
-Lets get to a stage where I feel I would feel pain in my code.
-
-We've added plenty of tests and we are now a point in the refactor phase and we see the code duplication below..
+We've added plenty of tests and we are now at a point in the refactor phase where we will see code duplication, as shown below.
 
 {%highlight javascript %}
 var fizzBuzz : function( number ){
@@ -145,7 +144,7 @@ var fizzBuzz : function( number ){
 } 
 {% endhighlight %}
 
-We see the 3 if statements, we check if the number is divisible by some number, 3, 5 or 3 and 5 (I've used to 15 to cover this case). Knowing we have our specs in place, any refactoring should still leave us in the green phase.
+We see the three if statements, we check if the number is divisible by some number, 3, 5 or 3 and 5 (I've used to 15 to cover this case). Knowing we have our specs in place, any refactoring should still leave us in the green phase.
 
 {% highlight javascript %}
 var fizzBuzz : function( number ){
@@ -154,4 +153,6 @@ var fizzBuzz : function( number ){
 }
 {% endhighlight %}
 
-We've refactor this into smaller lines of code, now one may argue that perhaps it's not more readable. Then perhaps a little more refactoring is needed. 
+We've refactor this into smaller lines of code. 
+
+This was a short introduction to Jasmine and BDD.  Jasmine comes with a lot of different matchers that can be viewed on the [homepage](http://jasmine.github.io/2.0/introduction.html), it can also be expanding with jasmine-jquery for DOM testing.
