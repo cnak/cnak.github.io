@@ -15,10 +15,10 @@ Lets have a look at an example of a spec.
 {% highlight javascript %}
 describe ( 'the group of specs' , function(){
 //what it should do
-it ( 'should be useful information', function(){
-  expect(presentation.inform()).toBeTruthy();
-)};
-} );
+  it ( 'should be useful information', function(){
+    expect(presentation.inform()).toBeTruthy();
+  )};
+});
 {% endhighlight %}
 
 It reads like plain English which is nice.
