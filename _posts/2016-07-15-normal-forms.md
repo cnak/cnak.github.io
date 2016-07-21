@@ -38,7 +38,7 @@ The aim of normalisation is to:
 
 **Un-normalised table**
 
-*(projectCode, projectDesc, clientNo, clientName, crafterNo, crafterName, experienceLevel, no.ofDays)*
+*(projectCode, projectDesc, clientNo, clientName, crafterNo, crafterName, experienceLevel, noOfDays)*
 
 **1NF Definition**
  A table is in first normal form (1NF) if it has an identifying key and it contains no repeating groups of data.

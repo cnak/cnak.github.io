@@ -2,7 +2,7 @@
 title: Thoughts on Normalisation
 comments: true
 layout: post
-date: 2016-07-15
+date: 2016-07-14
 category: 
 ---
 
