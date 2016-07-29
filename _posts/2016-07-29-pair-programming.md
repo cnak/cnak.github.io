@@ -7,12 +7,12 @@ category:
 ---
 Priya and I began working the Path to Mastery app a few weeks ago. We have spent the majority of the time pair programming.
 
-It has been technically challenging pairing continuously for 2 weeks with a single person. We have learned a lot from each other. From our different styles of approaching a problem. To the way we implement solution.
+It has been technically challenging pairing continuously for 2 weeks with a single person. We have learned a lot from each other. From our different styles of approaching a problem. To the way we implement solutions.
 
-Whilst I believe we have produced higher quality code, I'm  skeptical about the speed of our output. I decided to take a deeper look to see whether pair programming really is a productive technique.
+Whilst I believe we have produced higher quality code, I'm  skeptical about the speed of our output. I decided to take a deeper look to see whether pair programming, really is a productive technique.
 
 ### It produces higher quality?
-There have been empirical studies looking at productivity level and code quality resulting from pair programming.
+There have been empirical studies looking at productivity levels and code quality resulting from pair programming.
 
 One often cited [academic paper](http://www.cs.utah.edu/~lwilliam/Papers/ieeeSoftware.PDF) is from the XP pioneers R.Jefferies and W.Cunningham.
 
