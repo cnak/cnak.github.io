@@ -9,33 +9,27 @@ categories: []
 tags:
 - 8L
 - c_sharp
-meta:
-  _wpcom_is_markdown: '1'
-  _rest_api_published: '1'
-  _rest_api_client_id: "-1"
-  _publicize_job_id: '19363600384'
-author:
-  login: cnak123
-  email: kisema@gmail.com
-  display_name: Cedric
-  first_name: ''
-  last_name: ''
 ---
 <p>Today I delved into the world of C# and I have to honestly say it felt like I had once visited this particular world before. Having a background in Java made using C# seem familiar but not quite. There were many times where my assumptions were proven correctly. For example, when going through the Roman Numerals kata, in order to generalised the following code.</p>
-<blockquote><p>if (num == 2) {<br />
-return "II";<br />
-}<br />
-return "I";</p></blockquote>
+{% highlight csharp %}
+if (num == 2) {
+  return "II";
+}
+return "I";
+{% endhighlight %}
 <p>I figured in Java I would most likely use a mutable string that I could then easily then append to. I thought to myself, "I wonder if C# has a class like StringBuilder", lo and behold... it does !! and it's called "StringBuilder".</p>
 <p>The similarities don't stop there, here are class declarations in Java and C#</p>
-<blockquote><p>public class RomanNumerals</p>
-<p>public class RomanNumerals</p></blockquote>
+{% highlight csharp %}
+  public class RomanNumerals
+  public class RomanNumerals
+{% endhighlight %}
 <p>okay that's not a typo, class declarations are identical.<br />
 Or how about method declarations?</p>
-<blockquote><p>public static string convert (int arabic)<br />
-public static String convert(int arabic)</p></blockquote>
+{% highlight csharp %}
+  public static string convert (int arabic)
+  public static String convert(int arabic)
+{% endhighlight %}
 <p>again... no typo but there's a difference... the method declaration at the top is C#, the bottom declaration is Java. So the difference is the "String" text, one being uppercase and the other lowercase.</p>
 <p>Seeing little difference between the two languages, I decided to go full steam ahead with assumptions and so far I have only hit a few roadblocks, most of which were to do with the two languages have a different keyword for a similar functionality. e.g. "using" in C# and "import" in Java.</p>
 <p>Which language do I prefer? too little of a difference to tell at the moment, perhaps once I complete the Tic tac toe project in C#, I'll be in a better position to give a well formed opinion.</p>
 <p>&nbsp;</p>
-<p>Ced</p>
