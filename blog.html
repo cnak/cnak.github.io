@@ -2,14 +2,12 @@
 layout: default
 ---
 <div class="container">
-
   <div class="home">
     <h1 class="page-heading">Posts</h1>
     <ul class="post-list">
-    {% for post in site.posts limit 4 %}
-
-    <li><span class="post-meta">{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a>
-      <p>{{ post.content | strip_html | truncatewords:50}}</p></li>
+      {% for post in site.posts %}
+      <li><span class="post-meta"></span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a>
+        <p>{{ post.content | strip_html | truncatewords:50}}</p></li>
       <!-- <li> -->
       <!--   <h2 class= "post-title-header"> -->
       <!--     <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a> -->
@@ -48,12 +46,12 @@ layout: default
           </ul>
         </div>
 
-        </div>
       </div>
     </div>
-  </section>
 </div>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mootools/1.6.0/mootools-core-compat.js"
-></script>
-    <script type="text/javascript" src="{{ "js/main.js" | prepend: site.baseurl }}"></script>
+  </section>
+  </div>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mootools/1.6.0/mootools-core-compat.js"
+                                 ></script>
+  <script type="text/javascript" src="{{ "js/main.js" | prepend: site.baseurl }}"></script>
 
