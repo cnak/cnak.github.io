@@ -1,0 +1,55 @@
+==================================================================
+https://keybase.io/c_nak
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://cnak.github.io
+  * I am c_nak (https://keybase.io/c_nak) on keybase.
+  * I have a public key ASBgcwCxg8C5yEjh1jJpVbvtGiSIsqrCKRbnPcxe5qj9Qgo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120607300b183c0b9c848e1d6326955bbed1a2488b2aac22916e73dcc5ee6a8fd420a",
+      "host": "keybase.io",
+      "kid": "0120607300b183c0b9c848e1d6326955bbed1a2488b2aac22916e73dcc5ee6a8fd420a",
+      "uid": "2826375f50ab3af1ed8baedcd8772419",
+      "username": "c_nak"
+    },
+    "merkle_root": {
+      "ctime": 1515073648,
+      "hash": "481686becf3e4ffa46b3c25c42e5a1c65c83833f8a53913d48bc075142da3c087ef7f7b6153bd8eb1c0b4e19d1865c6bac4ca1beef6631bb75793c36d9d60644",
+      "hash_meta": "acd95190df129075813f5570d7ed6ba1d7deade6f12deb48b0c49eeaaf03a515",
+      "seqno": 1886325
+    },
+    "service": {
+      "hostname": "cnak.github.io",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "1.0.38"
+  },
+  "ctime": 1515073671,
+  "expire_in": 504576000,
+  "prev": "310eac6fcb044488b3606e4706b15b32b64631a5801ada0a0069cf9ba0364541",
+  "seqno": 8,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgYHMAsYPAuchI4dYyaVW77RokiLKqwikW5z3MXuao/UIKp3BheWxvYWTFA0N7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTIwNjA3MzAwYjE4M2MwYjljODQ4ZTFkNjMyNjk1NWJiZWQxYTI0ODhiMmFhYzIyOTE2ZTczZGNjNWVlNmE4ZmQ0MjBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwNjA3MzAwYjE4M2MwYjljODQ4ZTFkNjMyNjk1NWJiZWQxYTI0ODhiMmFhYzIyOTE2ZTczZGNjNWVlNmE4ZmQ0MjBhIiwidWlkIjoiMjgyNjM3NWY1MGFiM2FmMWVkOGJhZWRjZDg3NzI0MTkiLCJ1c2VybmFtZSI6ImNfbmFrIn0sIm1lcmtsZV9yb290Ijp7ImN0aW1lIjoxNTE1MDczNjQ4LCJoYXNoIjoiNDgxNjg2YmVjZjNlNGZmYTQ2YjNjMjVjNDJlNWExYzY1YzgzODMzZjhhNTM5MTNkNDhiYzA3NTE0MmRhM2MwODdlZjdmN2I2MTUzYmQ4ZWIxYzBiNGUxOWQxODY1YzZiYWM0Y2ExYmVlZjY2MzFiYjc1NzkzYzM2ZDlkNjA2NDQiLCJoYXNoX21ldGEiOiJhY2Q5NTE5MGRmMTI5MDc1ODEzZjU1NzBkN2VkNmJhMWQ3ZGVhZGU2ZjEyZGViNDhiMGM0OWVlYWFmMDNhNTE1Iiwic2Vxbm8iOjE4ODYzMjV9LCJzZXJ2aWNlIjp7Imhvc3RuYW1lIjoiY25hay5naXRodWIuaW8iLCJwcm90b2NvbCI6Imh0dHBzOiJ9LCJ0eXBlIjoid2ViX3NlcnZpY2VfYmluZGluZyIsInZlcnNpb24iOjF9LCJjbGllbnQiOnsibmFtZSI6ImtleWJhc2UuaW8gZ28gY2xpZW50IiwidmVyc2lvbiI6IjEuMC4zOCJ9LCJjdGltZSI6MTUxNTA3MzY3MSwiZXhwaXJlX2luIjo1MDQ1NzYwMDAsInByZXYiOiIzMTBlYWM2ZmNiMDQ0NDg4YjM2MDZlNDcwNmIxNWIzMmI2NDYzMWE1ODAxYWRhMGEwMDY5Y2Y5YmEwMzY0NTQxIiwic2Vxbm8iOjgsInRhZyI6InNpZ25hdHVyZSJ9o3NpZ8RA0PGYmLJfOllHYm+QdXOhZVq2Zpwc5U0JJef3E2TG1EIZI2soHbu57JDqGzIsx8fUKcmjabrccReAhq8BwwjZBahzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIItNZqDfC4bJx00tGNBe8l6e6lUx7sExt6mS6NixS+Mdo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/c_nak
+
+==================================================================
